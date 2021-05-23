@@ -1,0 +1,11 @@
+--legacy-peer-deps
+
+@tarragon/swipeable-tabs --legacy-peer-deps
+react-custom-scrollbars --legacy-peer-deps
+react-froala-wysiwyg --legacy-peer-deps
+react-image-magnifiers --legacy-peer-deps
+react-skeleton-loader --legacy-peer-deps
+react-swipeable-bottom-sheet --legacy-peer-deps
+
+
+npm i @date-io/moment"<2"

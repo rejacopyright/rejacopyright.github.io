@@ -1,0 +1,21 @@
+const a = [
+  { name: 'Wedding', icon: 'cat-wedding.png' },
+  { name: 'Fotografi', icon: 'cat-photography.png', selected: true },
+  { name: 'Kue', icon: 'cat-cake.png' },
+  { name: 'Catering', icon: 'cat-catering.png' },
+  { name: 'Dekorasi', icon: 'cat-decoration.png' },
+  { name: 'Sound', icon: 'cat-sound.png' },
+  { name: 'Venue', icon: 'cat-venue.png' },
+  { name: 'Undangan', icon: 'cat-invitation.png' },
+  { name: 'Pakaian', icon: 'cat-dress.png' },
+  { name: 'Upacara Adat', icon: 'cat-ceremony.png' },
+  { name: 'Gedung', icon: 'cat-hall.png' },
+  { name: 'Perhiasan', icon: 'cat-jewelry.png' },
+  { name: 'Makeup', icon: 'cat-makeup.png' },
+  { name: 'MC', icon: 'cat-mc.png' },
+  { name: 'Hantaran', icon: 'cat-parcel.png' },
+  { name: 'Photo Booth', icon: 'cat-photobooth.png' },
+  { name: 'Souvenir', icon: 'cat-souvenir.png' },
+  { name: 'Hiburan', icon: 'cat-music.png' },
+];
+export default a

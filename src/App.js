@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect, Fragment} from 'react'
+import Routes from 'routes'
+import 'moment/locale/id'
+// Store
+import { connect } from 'react-redux'
+import Cookies from 'js-cookie'
+import Login from 'auth/login'
+// _assets
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import '_assets/scss/bootstrap.scss'
+import '_assets/scss/icons.scss'
+import '_assets/scss/app.scss'
+import '_assets/scss/custom.scss'
+import '_assets/scss/phone.scss'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function Index(props){
+  useEffect(() => {
+    document.title = 'Dashboard';
+  }, []);
+  return(
+    <Fragment>
+      {
+        Cookies.getJSON('auth') ?
+        <Routes />
+        :
+        <Login />
+      }
+    </Fragment>
+  )
 }
-
-export default App;
+export default connect(s => s)(Index)

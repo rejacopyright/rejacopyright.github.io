@@ -1,9 +1,9 @@
-import {useEffect} from 'react'
+import {useMemo} from 'react'
 import Image from '_assets/images/404.png'
 export default function PageNotFound(props){
-  useEffect(() => {
+  useMemo(() => {
     document.title = '404 Not Found';
-  });
+  }, []);
   return(
     <div className="container-fluid">
       <div className="row vh-75 center">

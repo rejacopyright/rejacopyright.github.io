@@ -1,5 +1,6 @@
 import React, {Fragment, forwardRef, useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
+import lay from '_config/layout'
 export const Topbar = forwardRef((props, ref) => {
   const history = useHistory()
   const [height, heightSet] = useState()
@@ -8,7 +9,7 @@ export const Topbar = forwardRef((props, ref) => {
   }, [ref])
   return(
     <Fragment>
-      <div className={`phone bg-white ${props.fixed ? 'fixed' : 'sticky'}-top ${props.className}`} ref={ref}>
+      <div className={`phone bg-white ${lay.topbar} ${props.fixed ? 'fixed' : 'sticky'}-top ${props.className}`} ref={ref}>
         <div className="d-flex center border-bottom py-2">
           <div className="col-auto px-2">
             {!props.back && !props.logo && <div className="py-2"></div>}

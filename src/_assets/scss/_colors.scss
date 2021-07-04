@@ -4,10 +4,10 @@ $lightGrey: #eee;
 $gray: #ddd;
 $muted: #aaa;
 $grayDark: #343a40;
-$dark: #212529;
+$dark: #000;
 
 // $secondary: #1e2139;
-$primary: #292969;
+$primary: #3366FF;
 $secondary: #323652;
 $info: #0095f6;
 $warning: #ff6000;
@@ -21,7 +21,7 @@ $teal: #1ce1ac;
 $white: #fff;
 $pink: #f8c7cf;
 
-$softPrimary: rgba(41, 41, 105, 0.1);
+$softPrimary: #F3F6FF;
 $softSecondary: rgba(30, 33, 57, 0.1);
 $softSuccess: rgba(67, 211, 158, 0.1);
 $softInfo: rgba(0, 149, 246, 0.1);
@@ -36,5 +36,5 @@ $softIndigo: #746dad;
 
 // APP
 $bodyColor : $white;
-$topbarColor : $smoke;
-$sidebarColor : $smoke;
+$topbarColor : $white;
+$sidebarColor : $white;

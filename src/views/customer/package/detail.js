@@ -234,7 +234,7 @@ function PackageDesktop(props){
         </div>
       </div>
       <div className="col-12 sticky-top b-2 t-7">
-        <div className="row m-0 py-2 radius-10 shadow-xs border border-primary bg-smoke">
+        <div className="row m-0 py-2 radius-10 shadow border border-light bg-white">
           <div className="col">
             <Vendor info className="px-0" btnClass="ml-auto" followClass="bg-soft-success text-success" img={`${require('_dummy/sample/1.jpg').default}`} name="Reja Jamil" username="rejajamil" />
           </div>
@@ -317,7 +317,7 @@ function Index(){
           <p className="text-center text-10 f-600 text-dark my-0 py-2"> Booking </p>
         </Modal>
       </Topbar>
-      <div className="container-fluid px-0 pb-2 pb-md-3">
+      <div className="container-fluid pb-2 pb-md-3">
         <Package className="phone" star={9} img={[`${require('_dummy/sample/1.jpg').default}`, `${require('_dummy/sample/2.jpg').default}`, `${require('_dummy/sample/3.jpg').default}`]}/>
         <PackageDesktop className="desktop mt-2" />
         <div style={{paddingTop: bottom}} />

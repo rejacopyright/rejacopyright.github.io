@@ -16,7 +16,7 @@ function Chat(){
   const [chatEl, chatElSet] = useState(<ChatBtn />)
   function ChatBtn(){
     return(
-      <div className="fixed-bottom z-9">
+      <div className="fixed-bottom z-9 l-unset">
         <div className="center ml-auto same-50 radius-50 bg-gradient p-2 m-3 pointer shadow" onClick={() => chatElSet(<ChatContainer />)}>
           <img src={require('_dummy/icons/chat.png').default} className="w-100 img-white ppx-3" alt=""/>
         </div>
@@ -145,7 +145,7 @@ function Index(props){
     <div id="wrapper">
       <Topbar />
       <LeftMenu show={vendorPages} />
-      <div className="content-page ou p-0 mt-0" ref={cp}>
+      <div className="content-page ou mt-0" ref={cp}>
         <div className="content">
           <Suspense fallback={<Loading />}>
             <Switch>

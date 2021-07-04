@@ -2,6 +2,7 @@ import React, {Fragment, useRef, useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '_assets/images/logo.png'
 import { connect } from 'react-redux'
+import lay from '_config/layout'
 
 function TopBar(props){
   const [height, heightSet] = useState(0)
@@ -11,7 +12,7 @@ function TopBar(props){
   }, [])
   return (
     <Fragment>
-      <div ref={ref} className="navbar navbar-expand flex-column flex-md-row navbar-custom">
+      <div ref={ref} className={`navbar navbar-expand flex-column flex-md-row navbar-custom ${lay.topbar}`}>
         <div className="container-fluid">
           <Link to="/" className="navbar-brands mr-0 mr-md-2 logo">
             <span className="logo-lg center-left">
@@ -42,7 +43,7 @@ function TopBar(props){
             <li className="dropdown notification-list">
               <Link to="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
                 <i data-feather="message-circle" />
-                <div className="absolute t-0 r-0"><div className="center bg-danger text-white bold ppx-3 text-7 lh-12 radius-20 mt-1">99+</div></div>
+                <div className="absolute t-0 r-0"><div className="center bg-danger text-white bold ppx-3 text-7 lh-12 radius-20 mt-2">99+</div></div>
               </Link>
               <div className="dropdown-menu dropdown-menu-right dropdown-sm">
                 <div className="dropdown-item noti-title border-bottom">
@@ -77,7 +78,7 @@ function TopBar(props){
             <li className="dropdown notification-list">
               <Link to="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
                 <i data-feather="bell" />
-                <span className="noti-icon-badge" />
+                <span className="noti-icon-badge mt-2" />
               </Link>
               <div className="dropdown-menu dropdown-menu-right dropdown-sm">
                 <div className="dropdown-item noti-title border-bottom">
@@ -142,7 +143,7 @@ function TopBar(props){
             </li>
             <li className="dropdown notification-list align-self-center profile-dropdown">
               <Link to="#" className="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
-                <div className="media user-profile py-0 center-left">
+                <div className="media user-profile py-0 pl-3 center-left">
                   <img src={require('_dummy/avatar/c-2.png').default} alt="user" className="same-25" />
                   <div className="media-body text-left">
                     <h6 className="pro-user-name ml-2 my-0">

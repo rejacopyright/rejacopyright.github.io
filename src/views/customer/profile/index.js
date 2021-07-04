@@ -20,7 +20,6 @@ function Card(props){
 function Index(){
   const topBar = useRef()
   useEffect(() => {
-    document.title = 'Profile'
   }, [])
   return(
     <div className="container-fluid px-0">

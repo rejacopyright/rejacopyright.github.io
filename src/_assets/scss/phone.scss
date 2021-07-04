@@ -4,7 +4,7 @@ $phoneSize: $phone - .1;
 // ================================================================================================================
 @media (max-width: $phoneSize+'px') {
   .container-fluid{
-    padding-top: 0 !important;
+    padding: 0 !important;
     margin: 0 !important;
   }
   .content-page{

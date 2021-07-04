@@ -2,8 +2,8 @@ import React, {useRef, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {Topbar} from '_el/topbar'
 import {Profile} from '_el/user'
-// import axios from 'axios'
-// const api = require('js-cookie').getJSON()
+import axios from 'axios'
+const api = require('js-cookie').getJSON()
 
 function Card(props){
   return(
@@ -22,11 +22,10 @@ function Card(props){
 function Index(){
   const topBar = useRef()
   useEffect(() => {
-    document.title = 'Profile'
-    // axios.get(`${api.uri}/vendor/profile`, {headers: {Authorization: `Bearer ${api.token}`}})
-    // .then( r => {
-    //   console.log(r.data.user);
-    // })
+    axios.get(`${api.uri}/vendor/profile`, {headers: {Authorization: `Bearer ${api.token}`}})
+    .then( r => {
+      // console.log(r.data.user);
+    })
   }, [])
   return(
     <div className="container-fluid px-0">

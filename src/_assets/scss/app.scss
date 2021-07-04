@@ -9,6 +9,7 @@ html {
 
 body {
   font-size: .75rem !important;
+  color: $dark;
   // padding-bottom: 60px;
   overflow-x: hidden; }
 .custom-control-label::before, .custom-control-label::after{
@@ -27,22 +28,29 @@ body {
 .nav-second-level li a,
 .nav-thrid-level li a {
   padding: 4px 12px;
-  padding-left: 40px;
-  color: $grayDark;
-  font-size: 10pt;
+  // padding-left: 40px;
+  margin-left: 25px;
+  color: $dark;
+  font-size: 12px;
+  font-weight: 600;
   display: block;
   position: relative;
   -webkit-transition: all 0.4s;
+  margin-bottom: 3px;
   transition: all 0.1s; }
   .nav-second-level li a:focus, .nav-second-level li a:hover,
   .nav-thrid-level li a:focus,
   .nav-thrid-level li a:hover {
-    color: $primary; }
+    color: $primary;
+    background-color: $light;
+    border-radius: 5px;
+  }
 
 .nav-second-level li > a.active,
 .nav-thrid-level li > a.active {
   color: $primary;
-  font-weight: 700;
+  border-radius: 5px;
+  background-color: $softPrimary;
 }
 .nav-tabs li a.active{
   border-bottom: 2px solid $dark !important;
@@ -63,13 +71,13 @@ body {
   height: 100%;
   // overflow: hidden;
   width: 100%;
-  padding: $bodyWidth;
+  padding: 0 $paddingWidth;
 }
 
 .content-page {
   margin-left: $leftMenu;
   overflow: hidden;
-  padding: 0px 12.5px 5px 12.5px;
+  padding: 0px 20px;
   min-height: 80vh;
   margin-top: $topBar; }
 
@@ -77,9 +85,9 @@ body {
   width: $leftMenu;
   background: $sidebarColor;
   bottom: 0;
-  border-left: 1px solid $lightGrey;
-  border-right: 1px solid $lightGrey;
-  padding: 0 0 30px 0;
+  // border-left: 1px solid $lightGrey;
+  // border-right: 1px solid $lightGrey;
+  padding: 10px 0 30px 0;
   position: fixed;
   top: $topBar;
   -webkit-transition-duration: .2s;
@@ -101,20 +109,22 @@ body {
       color: $primary;
       fill: rgba(83, 105, 248, 0.1); }
   #sidebar-menu > ul > li > a {
-    color: #4B4B5A;
+    color: $dark;
     display: block;
     padding: 6px 10px 6px 15px;
-    font-size: 10pt;
-    font-weight: 400;
+    font-size: 12px;
+    font-weight: 600;
     position: relative;
-    -webkit-transition: all 0.1s;
-    transition: all 0.1s;
+    // -webkit-transition: all 0.1s;
+    // transition: all 0.1s;
+    margin-bottom: 3px;
+    border-radius: 5px;
     // border-left: 3px solid transparent;
   }
     #sidebar-menu > ul > li > a svg {
       display: inline-block;
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       vertical-align: sub;
       margin: 0 5px 0 0;
       color: #4B4B5A;
@@ -122,7 +132,9 @@ body {
     #sidebar-menu > ul > li > a:hover, #sidebar-menu > ul > li > a:focus, #sidebar-menu > ul > li > a:active {
       color: $primary;
       text-decoration: none;
-      // background-color: $light;
+    }
+    #sidebar-menu > ul > li > a:hover{
+      background-color: $light;
     }
       #sidebar-menu > ul > li > a:hover svg, #sidebar-menu > ul > li > a:focus svg, #sidebar-menu > ul > li > a:active svg {
         color: $primary;
@@ -140,8 +152,9 @@ body {
       // border-left: 3px solid $primary;
       border-left: unset;
       color: $primary;
-      background-color: $light;
+      background-color: $softPrimary;
       font-weight: 700;
+      border-radius: 5px;
     }
       #sidebar-menu > ul > li > a.active svg {
         color: $primary;
@@ -165,6 +178,7 @@ body {
     text-rendering: auto;
     line-height: 1.2rem;
     font-size: 0.9rem;
+    font-weight: 100;
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0);
   }
@@ -441,7 +455,7 @@ body {
 
 /* 4. Topbar */
 .navbar-custom {
-  padding: 0 1rem;
+  padding: 0 $paddingWidth;
   position: fixed;
   top: 0;
   left: 0;
@@ -449,8 +463,8 @@ body {
   height: $topBar;
   z-index: 1021;
   background-color: $topbarColor;
-  -webkit-box-shadow: 0 0.05rem 0.01rem rgba(75, 75, 90, 0.075);
-          box-shadow: 0 0.05rem 0.01rem rgba(75, 75, 90, 0.075);
+  -webkit-box-shadow: 0 0.05rem 0.01rem rgba(75, 75, 90, 0.1);
+          box-shadow: 0 0.05rem 0.01rem rgba(75, 75, 90, 0.1);
   /* Search */ }
   .navbar-custom .topnav-menu > li {
     float: left; }
@@ -545,8 +559,8 @@ body {
   letter-spacing: 1px; }
 
 .form-control {
-  border: 1px solid $gray;
-  background-color: $smoke;
+  border: 1px solid $lightGrey;
+  background-color: $white;
   -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: .3rem;
@@ -554,6 +568,9 @@ body {
     background-color: $white;
     border: 1px solid $gray;
   }
+}
+.input-group-text{
+  background-color: $white;
 }
 .form-control:disabled, .form-control[readonly]{
   background-color: $smoke !important;
@@ -632,7 +649,9 @@ body {
   .navbar-expand .navbar-nav .dropdown-menu{
     padding: .25rem 0;
   }
-
+.dropdown-menu{
+  z-index: 1031;
+}
 .profile-dropdown {
   display: none; }
 
@@ -643,7 +662,7 @@ body {
     margin-right: 5px; }
 
 .nav-user {
-  padding: 0 12px !important; }
+  padding: 0 !important; }
   .nav-user img {
     height: 32px;
     width: 32px; }
@@ -708,25 +727,23 @@ body {
 
 /* 7. Horizontal Nav */
 body[data-layout="topnav"] .container-fluid {
-  padding-right: 24px;
-  padding-left: 24px; }
+  padding-right: $paddingWidth;
+  padding-left: $paddingWidth; }
 
-body[data-layout="topnav"] .navbar-custom {
-  // position: relative;
-  padding: 0px; }
+// body[data-layout="topnav"] .navbar-custom { padding: 0px; }
   body[data-layout="topnav"] .navbar-custom .topnav-menu .nav-link:hover svg, body[data-layout="topnav"] .navbar-custom .topnav-menu .nav-link:focus svg, body[data-layout="topnav"] .navbar-custom .topnav-menu .nav-link:active svg {
     color: #4B4B5A; }
 
 body[data-layout="topnav"] .content-page {
   margin-top: 0px;
   margin-left: 0px !important;
-  padding: 35px 0; }
+  padding: 0; }
 
 body[data-layout="topnav"] .footer {
   left: 0; }
 
 body[data-layout="topnav"] .user-profile {
-  padding: 20px 10px; }
+  padding: 0; }
 
 body[data-layout="topnav"] .profile-dropdown {
   display: block; }
@@ -883,7 +900,7 @@ body[data-layout="topnav"] .profile-dropdown {
 
 @media (min-width: 992px) {
   body[data-layout="topnav"] .container-fluid {
-    max-width: 85%; }
+    max-width: 100%; }
   body[data-layout="topnav"] .navbar-custom .logo {
     display: block; }
     body[data-layout="topnav"] .navbar-custom .logo span.logo-sm {
@@ -2406,7 +2423,7 @@ div.dt-button-info {
   .metismenu li {
     list-style: none; }
     .metismenu li a[aria-expanded="true"] {
-      color: $primary !important; }
+      color: $primary; }
   .metismenu ul {
     padding: 0; }
     .metismenu ul li {

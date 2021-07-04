@@ -3,6 +3,8 @@ import {lazy} from 'react'
 const routes = [
   { path: "/vendor", exact: true, component: lazy(() => import('_pages/dashboard/index')) },
   { path: "/vendor/dashboard", exact: true, component: lazy(() => import('_pages/dashboard/index')) },
+  { path: "/vendor/product", exact: true, component: lazy(() => import('views/vendor/product/index')) },
+  { path: "/vendor/product/add", exact: true, component: lazy(() => import('views/vendor/product/add')) },
   { path: "/vendor/profile", exact: false, component: lazy(() => import('views/vendor/profile/index')) },
 
   // PAGES
@@ -24,6 +26,7 @@ const routes = [
   // PLUGINS
   { path: "/vendor/plugins/calendar", exact: true, component: lazy(() => import('_plugins/calendar')) },
   { path: "/vendor/plugins/chart", exact: true, component: lazy(() => import('_plugins/chart')) },
+  { path: "/vendor/plugins/image", exact: true, component: lazy(() => import('_plugins/image')) },
   { path: "/vendor/plugins/images", exact: true, component: lazy(() => import('_plugins/images')) },
   { path: "/vendor/plugins/scroll", exact: true, component: lazy(() => import('_plugins/scroll')) },
   { path: "/vendor/plugins/slider", exact: true, component: lazy(() => import('_plugins/slider')) },

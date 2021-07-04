@@ -110,6 +110,9 @@ function ButtonStyle(){
       <div className="col-auto mb-3">
         <div className="same-30 btn-soft-danger radius-50 center pointer mr-1"><i className="uil uil-heart" /></div>
       </div>
+      <div className="col-auto mb-3">
+        <div className="same-30 btn-primary radius-50 center pointer"><i className="uil uil-check text-16" /></div>
+      </div>
     </div>
   )
 }
@@ -179,6 +182,14 @@ function ButtonGroup(){
         <div className="btn-group radius-50 oh">
           <div className="btn btn-sm width-xs btn-soft-primary border-0">One</div>
           <div className="btn btn-sm width-xs btn-primary border-0">Two</div>
+        </div>
+      </div>
+      <div className="col-auto mb-3">
+        <p className="m-0 f-700 small">Group 4</p>
+        <div className="btn-group radius-50 oh pointer">
+          <div className="btn btn-sm btn-soft-secondary center radius-left-50"><i className="uil lh-1 uil-corner-up-left-alt text-12"/></div>
+          <div className="btn btn-sm btn-soft-secondary center"><i className="uil lh-1 uil-redo"/></div>
+          <div className="btn btn-sm btn-soft-secondary center radius-right-50"><i className="uil lh-1 uil-corner-up-right-alt text-12"/></div>
         </div>
       </div>
     </div>

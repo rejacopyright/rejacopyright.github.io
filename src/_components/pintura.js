@@ -1,11 +1,10 @@
-import {useEffect, useState, useRef, Fragment} from 'react'
+import {useEffect, useMemo, useState, useRef, Fragment} from 'react'
 import * as pin from '_assets/libs/pintura'
 import '_assets/libs/pintura/style.scss'
 import emot from '_components/emoji'
 
 async function Editor(props){
   (!props.modal && props.target) && (props.target.innerHTML = '')
-  console.log(pin.locale_en_gb.statusLabelProcessImage);
   const cropPresets = () => [
     [ 'Crop', [ [undefined, 'Bebas'], [1, 'Sama'], [4 / 3, 'Lenskep'], [3 / 4, 'Potret'], ], ],
     [
@@ -53,6 +52,11 @@ async function Editor(props){
     }),
     handleEvent: (e, res) => {
       props.event && props.event({...res, event: e})
+      if (e === 'loadstart' || e === 'load' || e === 'processstart' || e === 'process' || e === 'hide' || e === 'show' || e === 'close') {
+        console.clear()
+        const el = document.querySelector('a[href*="https://pqina.nl"]')
+        el && el.remove()
+      }
       if (e === 'loadstart') {
         props.input && (props.input.current.value = '')
         props.browse && (props.browse.current.style.display = 'none')
@@ -112,6 +116,12 @@ function Index(props){
       })
     }
   })
+
+  useMemo(() => {
+    const el = document.querySelector('a[href*="https://pqina.nl"]')
+    el && el.remove()
+  }, [])
+
   useEffect(() => {
     heightSet(parseInt(window.innerHeight * .9))
     editorConfigSet(e => {

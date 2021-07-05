@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react'
+import React, { useEffect, useState, forwardRef } from 'react'
 import str from 'react-element-to-jsx-string'
 import FroalaEditor from 'react-froala-wysiwyg'
 import 'froala-editor/css/froala_style.min.css'
@@ -21,6 +21,22 @@ function Index(props, ref){
       imageAllowedTypes: ['jpeg', 'jpg', 'png'],
       imageUploadRemoteUrls: false,
       events: {
+        'initialized': e => {
+          const el = document.querySelector('a[href*="https://www.froala.com"]')
+          el && el.parentElement.remove()
+          const sec = document.querySelector('#fr-logo')
+          sec && sec.remove()
+          const ph = document.querySelector('.fr-placeholder')
+          ph && (ph.style.marginTop = 0)
+        },
+        'html.beforeGet': e => {
+          const el = document.querySelector('a[href*="https://www.froala.com"]')
+          el && el.parentElement.remove()
+          const sec = document.querySelector('#fr-logo')
+          sec && sec.remove()
+          const ph = document.querySelector('.fr-placeholder')
+          ph && (ph.style.marginTop = 0)
+        },
         "image.beforeUpload": function(files) {
           const editor = this;
           if (files.length) {
@@ -58,6 +74,9 @@ function Index(props, ref){
   function onModelChange(e){
     props.onChange && props.onChange(e || '');
   }
+  useEffect(() => {
+    // console.log(FroalaEditor);
+  })
   return(
     <div className="" id={props.id}>
       <FroalaEditor model={str(<div>{props.children}</div>)} ref={ref}  tag='textarea' config={state.config} onModelChange={onModelChange} onImage={e => console.log(e)}/>

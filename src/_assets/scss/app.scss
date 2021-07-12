@@ -578,6 +578,7 @@ body {
   letter-spacing: 1px; }
 
 .form-control {
+  font-weight: 600;
   border: 1px solid $lightGrey;
   background-color: $white;
   -webkit-box-shadow: none;
@@ -589,10 +590,15 @@ body {
   }
 }
 .input-group-text{
+  font-weight: 600;
   background-color: $white;
 }
 .form-control:disabled, .form-control[readonly]{
   background-color: $smoke !important;
+}
+label{
+  font-weight: 700;
+  margin-bottom: .125rem;
 }
 /* Notification */
 @-webkit-keyframes blinker {

@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect, useRef} from 'react'
+import {Fragment, useState, useEffect, useRef} from 'react'
 import {Link} from 'react-router-dom'
 import { Tabs as Container, Tab } from '@tarragon/swipeable-tabs'
 
@@ -49,9 +49,9 @@ export function Tabs(props){
   const tab = new URLSearchParams(window.location.search).get('tab');
   useEffect(() => {
     topSet(tabHeight.current.offsetHeight)
-    const activeTab = tab || props.children[0].props.title
+    const activeTab = tab || props.default || props.children[0].props.title
     activeSet(activeTab)
-  }, [tab, props.children]);
+  }, [tab, props]);
   return(
     <Fragment>
       <ul ref={tabHeight} className={`nav nav-tabs vendor-profile-tab ${props.className} ${props.justify && 'nav-justified'} ${props.fixed ? 'fixed-top' : props.sticky && 'sticky-top'} bg-white mbpx-2 pt-2 ${props.phone && 'phone'}`} style={{top: `${props.top || 0}px`}}>

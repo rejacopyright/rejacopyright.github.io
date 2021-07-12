@@ -127,17 +127,21 @@ function DesimalFunc(props, ref) {
           ref={ref}
           thousandSeparator="."
           decimalSeparator=","
-          decimalScale="2"
+          decimalScale={props.decimal || false}
+          allowEmptyFormatting={true}
           isAllowed={ val => {
-            const {floatValue} = val;
+            const {floatValue, value} = val;
             if (props.min && props.max) {
-              return floatValue >= props.min && floatValue <= props.max;
+              return (floatValue >= props.min && floatValue <= props.max) || floatValue === undefined;
             }
-            if (props.min) {
+            if (props.min && parseInt(props.min) !== 0) {
               return floatValue >= props.min;
             }
             if (props.max) {
-              return floatValue <= props.max;
+              return floatValue <= props.max || floatValue === undefined;
+            }
+            if (parseInt(value[0]) === 0 && !isNaN(parseInt(value[1]))) {
+              return false
             }
             return true;
           }}

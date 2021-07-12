@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState, Fragment} from 'react'
+import {useEffect, useRef, useState, Fragment} from 'react'
 import {Link} from 'react-router-dom'
 import lay from '_config/layout'
 import debounce from 'lodash.debounce'
@@ -220,10 +220,10 @@ function PackageDesktop(props){
               </div>
             </div>
             <div className="mt-2">
-              <Tabs tabClass="py-0">
+              <Tabs tabClass="py-0" default="review">
                 {
                   tabs.map((r, key) => (
-                    <div className="pt-2" title={r.title} label={r.label} key={key}>
+                    <div className="pt-2" {...r} key={key}>
                       {r.component}
                     </div>
                   ))
@@ -233,7 +233,7 @@ function PackageDesktop(props){
           </div>
         </div>
       </div>
-      <div className="col-12 sticky-top b-2 t-7">
+      <div className="col-12 sticky-top b-2 t-9">
         <div className="row m-0 py-2 radius-10 shadow border border-light bg-white">
           <div className="col">
             <Vendor info className="px-0" btnClass="ml-auto" followClass="bg-soft-success text-success" img={`${require('_dummy/sample/1.jpg').default}`} name="Reja Jamil" username="rejajamil" />

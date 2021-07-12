@@ -98,6 +98,7 @@ li{line-height: 1.2;}
 .w-90{ width: 90% !important; }
 .w-100{ width: 100% !important; }
 // MIN
+.mh-0{ min-height: 0 !important; }
 .mh-50{ min-height: 50px !important; }
 .mh-75{ min-height: 75px !important; }
 .mh-100{ min-height: 100px !important; }
@@ -311,13 +312,13 @@ li{line-height: 1.2;}
   box-shadow: $props !important;
 }
 %shadow-xs { @include shadow(0 0.05rem 0.05rem rgba(75, 75, 90, 0.1)); }
-%shadow-sm { @include shadow(0 0.25rem 0.25rem rgba(75, 75, 90, 0.05)); }
+%shadow-sm { @include shadow(0 0.25rem 0.25rem rgba(75, 75, 90, 0.15)); }
 %shadow { @include shadow(0 0.25rem 2rem rgba(0, 0, 0, 0.05)); }
 %shadow-md { @include shadow(0 1rem 2rem rgba(0, 0, 0, 0.05)); }
 %shadow-lg { @include shadow(0 1rem 5rem rgba(0, 0, 0, 0.05)); }
 %shadow-xl { @include shadow(0 1rem 10rem rgba(0, 0, 0, 0.05)); }
 %shadow-none { @include shadow(none); }
-%shadow-img { @include shadow(0 1rem 2rem rgba(0, 0, 0, 0.25)); }
+%shadow-img { @include shadow(0 1rem 2rem rgba(0, 0, 0, 0.15)); }
 
 .shadow-xs { @extend %shadow-xs; }
 .shadow-sm { @extend %shadow-sm; }
@@ -328,12 +329,12 @@ li{line-height: 1.2;}
 .shadow-none { @extend %shadow-none; }
 .shadow-img { @extend %shadow-img; }
 
-.shadow-xs-bold { @include shadow(0 0.05rem 0.05rem rgba(75, 75, 90, 0.5)); }
-.shadow-sm-bold { @include shadow(0 0.25rem 0.25rem rgba(75, 75, 90, 0.5)); }
-.shadow-bold { @include shadow(0 0.25rem 2rem rgba(0, 0, 0, 0.5)); }
-.shadow-md-bold { @include shadow(0 1rem 2rem rgba(0, 0, 0, 0.5)); }
-.shadow-lg-bold { @include shadow(0 1rem 5rem rgba(0, 0, 0, 0.5)); }
-.shadow-xl-bold { @include shadow(0 1rem 10rem rgba(0, 0, 0, 0.5)); }
+.shadow-xs-bold { @include shadow(0 0.05rem 0.05rem rgba(75, 75, 90, 0.25)); }
+.shadow-sm-bold { @include shadow(0 0.25rem 0.25rem rgba(75, 75, 90, 0.25)); }
+.shadow-bold { @include shadow(0 0.25rem 2rem rgba(0, 0, 0, 0.35)); }
+.shadow-md-bold { @include shadow(0 1rem 2rem rgba(0, 0, 0, 0.35)); }
+.shadow-lg-bold { @include shadow(0 1rem 5rem rgba(0, 0, 0, 0.35)); }
+.shadow-xl-bold { @include shadow(0 1rem 10rem rgba(0, 0, 0, 0.35)); }
 
 // TRANSITION
 @mixin transdur($time) {

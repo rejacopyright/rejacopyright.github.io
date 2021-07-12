@@ -53,9 +53,11 @@ async function Editor(props){
     handleEvent: (e, res) => {
       props.event && props.event({...res, event: e})
       if (e === 'loadstart' || e === 'load' || e === 'processstart' || e === 'process' || e === 'hide' || e === 'show' || e === 'close') {
-        console.clear()
-        const el = document.querySelector('a[href*="https://pqina.nl"]')
-        el && el.remove()
+        if (process.env.NODE_ENV === 'production') {
+          console.clear()
+          const el = document.querySelector('a[href*="https://pqina.nl"]')
+          el && el.remove()
+        }
       }
       if (e === 'loadstart') {
         props.input && (props.input.current.value = '')
@@ -99,7 +101,7 @@ function Index(props){
   const [crop, cropSet] = useState({})
   const [editorConfig, editorConfigSet] = useState({
     target: null,
-    file: props.src || require('_dummy/sample/1.jpg').default,
+    file: props.src,
     input: null,
     modal: props.modal,
     browse: false,
@@ -108,12 +110,11 @@ function Index(props){
       props.onFinish && props.onFinish({...r, blob: URL.createObjectURL(r.dest)})
       cropSet(r.imageState.crop)
       blobSet(r.dest)
+      editorConfigSet(e => { e.modal = false; return e })
     },
     onHide: r => {
-      editorConfigSet(e => {
-        e.modal = false
-        return e
-      })
+      props.onClose && props.onClose()
+      editorConfigSet(e => { e.modal = false; return e })
     }
   })
 
@@ -123,10 +124,10 @@ function Index(props){
   }, [])
 
   useEffect(() => {
-    heightSet(parseInt(window.innerHeight * .9))
+    !props.modal && heightSet(props.height || parseInt(window.innerHeight * .9))
     editorConfigSet(e => {
       e.target = picedit.current
-      e.file = props.src || require('_dummy/sample/1.jpg').default
+      e.file = props.src
       e.input = input
       e.modal = props.modal
       e.browse = props.browse && uploadBtn
@@ -135,7 +136,7 @@ function Index(props){
   }, [props])
 
   useEffect(() => {
-    Editor(editorConfig)
+    (props.show && props.src) && Editor(editorConfig)
   }, [props, editorConfig])
 
   function inputChange(e){

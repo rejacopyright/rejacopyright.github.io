@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import {Inputicon} from '_components/form'
 import Alert from '_components/alert'
+
 // INIT JS
 function Login(props){
   const [loading, loadingSet] = useState(false)
@@ -17,16 +19,30 @@ function Login(props){
       loadingSet(false)
     }
   }
+  function autoLogin(){
+    loadingSet(true)
+    props.dispatch({type:'USERNAME', value: 'reja'})
+    props.dispatch({type:'PASSWORD', value: 'jamil'})
+    props.dispatch({type:'LOGIN', value:{}})
+    loadingSet(false)
+  }
   return (
     <div className="account-pages">
       <div className="container">
-        <div className="row justify-content-center align-items-center vh-100">
+        <div className="row justify-content-center align-items-center vh-90">
           <div className="col-xl-10">
             <div className="card m-0 radius-30">
               <div className="card-body p-0">
                 <div className="row flex-nowrap m-0">
-                  <div className="col-md-7 d-none d-md-flex oh align-items-center justify-content-center border-right">
-                    <img src={require('_assets/images/maintenance.svg').default} alt="" style={{height:'250px'}}/>
+                  <div className="col-md-7 d-none d-md-flex align-items-center oh border-right">
+                    <div className="">
+                      <p className="bold text-12 border-bottom border-light pb-1 mb-2 border-2">What's New</p>
+                      <ul className="px-0">
+                        <li onClick={autoLogin} className="text-10 my-2 i text-muted"><code>Product page</code> in vendor <Link to={{pathname: '/vendor/product', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-10 my-2 i text-muted"><code>Product Add page</code> in vendor <Link to={{pathname: '/vendor/product/add', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-10 my-2 i text-muted">Image Editor <Link to={{pathname: '/vendor/plugins/image', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                      </ul>
+                    </div>
                   </div>
                   <div className="col px-4 py-0 border-1">
                     <div className="text-center mb-1">

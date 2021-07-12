@@ -77,6 +77,7 @@ const customStyles = {
     ...provided,
     padding: '0 0 0 5px',
     fontSize: '9pt',
+    fontWeight: 700,
   }),
   menuList: (provided, state) => ({
     ...provided,
@@ -259,7 +260,7 @@ function Index(props){
   }, []);
   return(
     <div className={props.rowClass}>
-      {props.bold && props.title ? <label>{props.title}</label> : props.title && <small className="d-block">{props.title}</small>}
+      {props.bold && props.title ? <label>{props.title}</label> : props.title && <p className="mb-1 bold">{props.title}</p>}
       {
         loading ?
         <div className="d-block oh" style={{height:'29px'}}>

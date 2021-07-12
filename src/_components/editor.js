@@ -1,4 +1,4 @@
-import React, { useEffect, useState, forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import str from 'react-element-to-jsx-string'
 import FroalaEditor from 'react-froala-wysiwyg'
 import 'froala-editor/css/froala_style.min.css'
@@ -8,20 +8,56 @@ import 'froala-editor/js/plugins.pkgd.min.js'
 // import 'froala-editor/js/languages/id.js'
 
 function Index(props, ref){
-  const [state] = useState({
+  // const toolbarButtons = {
+  //   'moreText': {
+  //     'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
+  //   },
+  //   'moreParagraph': {
+  //     'buttons': ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
+  //   },
+  //   'moreRich': {
+  //     'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertHR'],
+  //     'buttonsVisible': 8
+  //   },
+  //   'moreMisc': {
+  //     'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
+  //     'align': 'right',
+  //     'buttonsVisible': 2
+  //   }
+  // }
+  const toolbarSimple = {
+    'moreText': {
+      'buttons': ['bold', 'italic', 'strikeThrough', 'clearFormatting'],
+      'buttonsVisible': 5
+    },
+    'moreParagraph': {
+      'buttons': ['formatOLSimple', 'formatUL', 'paragraphFormat']
+    },
+    'moreRich': {
+      'buttons': ['insertLink', 'insertTable', 'insertHR'],
+      'buttonsVisible': 4
+    },
+    'moreMisc': {
+      'buttons': ['undo', 'redo'],
+      'align': 'right',
+      'buttonsVisible': 2
+    }
+  }
+  const state = {
     config: {
       placeholderText: "Edit Me",
       attribution: false,
       heightMin: 200,
       toolbarSticky: true,
-      toolbarStickyOffset: 35,
+      toolbarStickyOffset: props.offsetTop,
       tooltips: false,
-      zIndex: 99,
+      zIndex: 1,
+      charCounterCount: false,
       quickInsertEnabled: false,
       imageAllowedTypes: ['jpeg', 'jpg', 'png'],
       imageUploadRemoteUrls: false,
       events: {
-        'initialized': e => {
+        'initialized': function(e) {
           const el = document.querySelector('a[href*="https://www.froala.com"]')
           el && el.parentElement.remove()
           const sec = document.querySelector('#fr-logo')
@@ -29,7 +65,7 @@ function Index(props, ref){
           const ph = document.querySelector('.fr-placeholder')
           ph && (ph.style.marginTop = 0)
         },
-        'html.beforeGet': e => {
+        'html.beforeGet': function(e) {
           const el = document.querySelector('a[href*="https://www.froala.com"]')
           el && el.parentElement.remove()
           const sec = document.querySelector('#fr-logo')
@@ -52,31 +88,15 @@ function Index(props, ref){
         }
       },
       // imageUploadURL: 'http://localhost',
-      toolbarButtons: {
-        'moreText': {
-          'buttons': ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'fontFamily', 'fontSize', 'textColor', 'backgroundColor', 'inlineClass', 'inlineStyle', 'clearFormatting']
-        },
-        'moreParagraph': {
-          'buttons': ['alignLeft', 'alignCenter', 'formatOLSimple', 'alignRight', 'alignJustify', 'formatOL', 'formatUL', 'paragraphFormat', 'paragraphStyle', 'lineHeight', 'outdent', 'indent', 'quote']
-        },
-        'moreRich': {
-          'buttons': ['insertLink', 'insertImage', 'insertVideo', 'insertTable', 'emoticons', 'fontAwesome', 'specialCharacters', 'embedly', 'insertHR'],
-          'buttonsVisible': 8
-        },
-        'moreMisc': {
-          'buttons': ['undo', 'redo', 'fullscreen', 'print', 'getPDF', 'spellChecker', 'selectAll', 'html', 'help'],
-          'align': 'right',
-          'buttonsVisible': 2
-        }
-      }
+      quickInsertButtons: false,
+      toolbarButtonsMD: toolbarSimple,
+      toolbarButtonsSM: toolbarSimple,
+      toolbarButtonsXS: toolbarSimple,
     }
-  });
+  }
   function onModelChange(e){
     props.onChange && props.onChange(e || '');
   }
-  useEffect(() => {
-    // console.log(FroalaEditor);
-  })
   return(
     <div className="" id={props.id}>
       <FroalaEditor model={str(<div>{props.children}</div>)} ref={ref}  tag='textarea' config={state.config} onModelChange={onModelChange} onImage={e => console.log(e)}/>

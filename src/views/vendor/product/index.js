@@ -9,7 +9,6 @@ function Product(props){
   const productImg = useRef()
   const [productHeight, productHeightSet] = useState('0px')
   useEffect(() => {
-    console.log(lay);
     const updateSize = debounce(() => {
       productImg.current && productHeightSet((productImg.current.offsetWidth || 0) + 'px');
     }, 300)

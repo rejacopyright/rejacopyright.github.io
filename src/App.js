@@ -1,4 +1,3 @@
-import React, {useEffect, Fragment} from 'react'
 import Routes from 'routes'
 import 'moment/locale/id'
 // Store
@@ -14,18 +13,6 @@ import '_assets/scss/custom.scss'
 import '_assets/scss/phone.scss'
 
 function Index(props){
-  useEffect(() => {
-    document.title = 'Dashboard';
-  }, []);
-  return(
-    <Fragment>
-      {
-        Cookies.getJSON('auth') ?
-        <Routes />
-        :
-        <Login />
-      }
-    </Fragment>
-  )
+  return Cookies.getJSON('auth') ? <Routes /> : <Login />
 }
 export default connect(s => s)(Index)

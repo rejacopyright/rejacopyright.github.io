@@ -1,7 +1,7 @@
-import {createStore} from 'redux';
-import Cookies from 'js-cookie';
-import moment from 'moment';
-import 'moment/locale/id';
+import {createStore} from 'redux'
+import Cookies from 'js-cookie'
+import moment from 'moment'
+import 'moment/locale/id'
 // Init State
 const init = {
   username:null,
@@ -18,24 +18,21 @@ const reducer = (state = init, action) => {
   }
   if (action.type === 'LOGIN') {
     if (state.username && state.password) {
-      let exp = moment().add(10, 'h').toDate();
-      Cookies.set('uri', process.env.REACT_APP_URI, { expires: exp });
-      Cookies.set('img', process.env.REACT_APP_IMG, { expires: exp });
-      Cookies.set('token', action.value.api_token, { expires: exp });
-      Cookies.set('user', action.value, { expires: exp });
-      Cookies.set('auth', true, { expires: exp });
+      let exp = moment().add(2, 'h').toDate()
+      Cookies.set('uri', process.env.REACT_APP_URI, { expires: exp })
+      Cookies.set('img', process.env.REACT_APP_IMG, { expires: exp })
+      Cookies.set('token', action.value.api_token, { expires: exp })
+      Cookies.set('user', action.value, { expires: exp })
+      Cookies.set('auth', true, { expires: exp })
       return {...state, auth: true}
     }
   }
   if (action.type === 'LOGOUT') {
-    Cookies.remove('user');
-    Cookies.remove('token');
-    Cookies.remove('auth');
-    Cookies.remove('XSRF-TOKEN');
-    return {state:init};
+    Object.keys(Cookies.get()).map(r => Cookies.remove(r))
+    return {state:init}
   }
-  return state;
+  return state
 }
 // Store
-const store = createStore(reducer);
-export default store;
+const store = createStore(reducer)
+export default store

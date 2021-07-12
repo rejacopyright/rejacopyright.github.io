@@ -1,12 +1,13 @@
 import {useState} from 'react'
 import Editor from '_components/pintura'
 function Index(props){
-  const [src, srcSet] = useState(false)
+  const [src, srcSet] = useState(require('_dummy/sample/1.jpg').default)
   const [modal, modalSet] = useState(false)
   function inputChange(e){
     e.name && srcSet(e)
   }
   function onFinish(e){
+    srcSet(false)
   }
   function gambarIni(e){
     srcSet(e.target.src)
@@ -18,7 +19,7 @@ function Index(props){
     <div className="container-fluid">
       <div className="row m-0">
         <div className="col-md-8 px-0">
-          <Editor browse event={event} onFinish={onFinish} onInputChange={inputChange} src={src} preview modal={modal} />
+          <Editor show browse event={event} onFinish={onFinish} onInputChange={inputChange} onClose={() => modalSet(false)} src={src} preview modal={modal} />
         </div>
         <div className="col-md-4 center">
           <div className="row">

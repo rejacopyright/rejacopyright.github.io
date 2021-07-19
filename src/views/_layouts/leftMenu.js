@@ -47,7 +47,7 @@ function activeIt(el, active = true){
     el.closest('li').classList.remove('mm-active')
   }
   const initLink = document.querySelector(`#menu-bar li a`)
-  let pathname = window.location.pathname.split('/')
+  let pathname = window.location.hash.split('/')
   let activeLink = document.querySelectorAll(`#menu-bar li a[href="${pathname.join('/')}"]`)[0]
   if (!activeLink) {
     pathname.splice(-1,1)
@@ -91,8 +91,8 @@ function slims(){
   )
 }
 const Index = forwardRef((props, ref) => {
+  let pathname = window.location.hash.split('/')
   const activeLink = useCallback(() => {
-    let pathname = props.location.pathname.split('/')
     let activeLink = document.querySelectorAll(`#menu-bar li a[href="${pathname.join('/')}"]`)[0]
     if (!activeLink) {
       pathname.splice(-1,1)
@@ -103,7 +103,7 @@ const Index = forwardRef((props, ref) => {
       }
     }
     return activeLink
-  }, [props.location.pathname])
+  }, [pathname])
   useEffect(() => {
     const initLink = document.querySelector(`#menu-bar li a`)
     activeIt(activeLink() || initLink)

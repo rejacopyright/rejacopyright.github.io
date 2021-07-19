@@ -1,0 +1,1 @@
+(this.webpackJsonptheme=this.webpackJsonptheme||[]).push([[17],{869:function(e,t,n){"use strict";n.r(t);var s=n(0);t.default=function(){return Object(s.jsx)("div",{className:"container-fluid pt-3",children:"Paket Add"})}}}]);

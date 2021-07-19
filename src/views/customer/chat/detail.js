@@ -3,7 +3,7 @@ import {Swipe} from '_el/swipe'
 import {Textarea} from '_components/form'
 import {Topbar, Bottombar} from '_el/topbar'
 import {Chats, Chat} from '_el/chat'
-// const api = require('js-cookie').getJSON()
+// const api = require(`js-cookie`).getJSON()
 
 function Index(){
   const bottomBar = useRef()
@@ -24,10 +24,10 @@ function Index(){
         </div>
       </Topbar>
       <Chats>
-        <Chat avatar img={require('_dummy/sample/1.jpg').default} imgTitle />
-        <Chat avatar={require('_dummy/avatar/c-1.png').default} me />
-        <Chat avatar me package={require('_dummy/sample/1.jpg').default} />
-        <Chat avatar={require('_dummy/avatar/c-11.png').default} />
+        <Chat avatar img={require(`${process.env.REACT_APP_IMAGES}/products/1.jpg`).default} imgTitle />
+        <Chat avatar={require(`${process.env.REACT_APP_IMAGES}/avatar/c-1.png`).default} me />
+        <Chat avatar me product={require(`${process.env.REACT_APP_IMAGES}/products/1.jpg`).default} />
+        <Chat avatar={require(`${process.env.REACT_APP_IMAGES}/avatar/c-11.png`).default} />
         <Chat me />
         <Chat avatar me />
       </Chats>

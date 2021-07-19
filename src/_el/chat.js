@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {List as Package} from '_el/package'
+import {List as Product} from '_el/product'
 
 export function Chats(props){
   return(
@@ -21,7 +21,7 @@ export function Chat(props){
               {
                 props.img &&
                 <div className="bg-light mb-2 radius-10 oh">
-                  <img src={`${props.img || require('_dummy/avatar.png').default}`} className="w-100" alt="me" />
+                  <img src={`${props.img || require(`${process.env.REACT_APP_IMAGES}/avatar/avatar.png`).default}`} className="w-100" alt="me" />
                   {
                     props.imgTitle &&
                     <p className="m-0 p-2 f-600 lh-12 text-10"> Lorem ipsum dolor sit amet. </p>
@@ -29,11 +29,11 @@ export function Chat(props){
                 </div>
               }
               {
-                (props.package && props.package !== true) &&
+                (props.product && props.product !== true) &&
                 <div className="bg-light mb-2 radius-10 oh">
-                  <Package img={props.package}  />
+                  <Product img={props.product}  />
                   {
-                    props.packageTitle &&
+                    props.productTitle &&
                     <p className="m-0 p-2 f-600 lh-12 text-10"> Lorem ipsum dolor sit amet. </p>
                   }
                 </div>
@@ -45,20 +45,20 @@ export function Chat(props){
             </div>
           </div>
           <div className={`chat-avatar ${!props.avatar && 'o-0'}`}>
-            <img src={`${(props.avatar && props.avatar !== true) ? props.avatar : require('_dummy/avatar.png').default}`} className="border" alt="me" />
+            <img src={`${(props.avatar && props.avatar !== true) ? props.avatar : require(`${process.env.REACT_APP_IMAGES}/avatar/avatar.png`).default}`} className="border" alt="me" />
           </div>
         </li>
         :
         <li className="center-bottom j-left">
           <div className={`chat-avatar ${!props.avatar && 'o-0'}`}>
-            <img src={`${(props.avatar && props.avatar !== true) ? props.avatar : require('_dummy/avatar.png').default}`} className="border" alt="other" />
+            <img src={`${(props.avatar && props.avatar !== true) ? props.avatar : require(`${process.env.REACT_APP_IMAGES}/avatar/avatar.png`).default}`} className="border" alt="other" />
           </div>
           <div className="relative w-70">
             <div className="conversation-text pt-2">
               {
                 props.img &&
                 <div className="bg-light mb-2 radius-10 oh">
-                  <img src={`${props.img || require('_dummy/img.png').default}`} className="w-100" alt="me" />
+                  <img src={`${props.img || require(`${process.env.REACT_APP_IMAGES}/icons/image.png`).default}`} className="w-100" alt="me" />
                   {
                     props.imgTitle &&
                     <p className="m-0 p-2 f-600 lh-12 text-10"> Lorem ipsum dolor sit amet. </p>
@@ -66,11 +66,11 @@ export function Chat(props){
                 </div>
               }
               {
-                (props.package && props.package !== true) &&
+                (props.product && props.product !== true) &&
                 <div className="bg-light mb-2 radius-10 oh">
-                  <Package img={props.package}  />
+                  <Product img={props.product}  />
                   {
-                    props.packageTitle &&
+                    props.productTitle &&
                     <p className="m-0 p-2 f-600 lh-12 text-10"> Lorem ipsum dolor sit amet. </p>
                   }
                 </div>

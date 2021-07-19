@@ -8,7 +8,14 @@ ul{list-style-type: '-  ';}
 li{line-height: 1.2;}
 
 .oh{ overflow: hidden !important; }
+.oh-x{ overflow-x: hidden !important; }
+.oh-y{ overflow-y: hidden !important; }
 .ou{ overflow: unset !important; }
+.ou-x{ overflow-x: unset !important; }
+.ou-y{ overflow-y: unset !important; }
+.ov{ overflow: visible !important; }
+.ov-x{ overflow-x: visible !important; }
+.ov-y{ overflow-y: visible !important; }
 .pointer{ cursor: pointer !important; }
 .no-drop{ cursor: no-drop !important; }
 .border-1{ border-width: 2.5px !important; }
@@ -87,16 +94,6 @@ li{line-height: 1.2;}
 .wpx-100{ width: 100px !important; }
 .wpx-200{ width: 200px !important; }
 .wpx-300{ width: 300px !important; }
-.w-10{ width: 10% !important; }
-.w-20{ width: 20% !important; }
-.w-30{ width: 30% !important; }
-.w-40{ width: 40% !important; }
-.w-50{ width: 50% !important; }
-.w-60{ width: 60% !important; }
-.w-70{ width: 70% !important; }
-.w-80{ width: 80% !important; }
-.w-90{ width: 90% !important; }
-.w-100{ width: 100% !important; }
 // MIN
 .mh-0{ min-height: 0 !important; }
 .mh-50{ min-height: 50px !important; }
@@ -113,6 +110,7 @@ li{line-height: 1.2;}
 .mxw-75{ max-width: 75px !important; }
 .mxw-100{ max-width: 100px !important; }
 .mxw-200{ max-width: 200px !important; }
+.mxw-250{ max-width: 250px !important; }
 .mxw-300{ max-width: 300px !important; }
 // SQUARE
 .same-2{ width: 2px !important; height: 2px !important; }
@@ -312,7 +310,7 @@ li{line-height: 1.2;}
   box-shadow: $props !important;
 }
 %shadow-xs { @include shadow(0 0.05rem 0.05rem rgba(75, 75, 90, 0.1)); }
-%shadow-sm { @include shadow(0 0.25rem 0.25rem rgba(75, 75, 90, 0.15)); }
+%shadow-sm { @include shadow(0 0.25rem 0.25rem rgba(75, 75, 90, 0.1)); }
 %shadow { @include shadow(0 0.25rem 2rem rgba(0, 0, 0, 0.05)); }
 %shadow-md { @include shadow(0 1rem 2rem rgba(0, 0, 0, 0.05)); }
 %shadow-lg { @include shadow(0 1rem 5rem rgba(0, 0, 0, 0.05)); }
@@ -695,14 +693,29 @@ li{line-height: 1.2;}
     }
   }
 }
-
+.w-10{ width: 10% !important; }
+.w-20{ width: 20% !important; }
+.w-30{ width: 30% !important; }
+.w-40{ width: 40% !important; }
+.w-50{ width: 50% !important; }
+.w-60{ width: 60% !important; }
+.w-70{ width: 70% !important; }
+.w-80{ width: 80% !important; }
+.w-90{ width: 90% !important; }
+.w-100{ width: 100% !important; }
 @media (min-width: $phone+'px') {
-  .phone{
-    display: none !important;
-  }
+  .phone{ display: none !important; }
+  .w-md-10{ width: 10% !important; }
+  .w-md-20{ width: 20% !important; }
+  .w-md-30{ width: 30% !important; }
+  .w-md-40{ width: 40% !important; }
+  .w-md-50{ width: 50% !important; }
+  .w-md-60{ width: 60% !important; }
+  .w-md-70{ width: 70% !important; }
+  .w-md-80{ width: 80% !important; }
+  .w-md-90{ width: 90% !important; }
+  .w-md-100{ width: 100% !important; }
 }
 @media (max-width: $phone+'px') {
-  .desktop{
-    display: none !important;
-  }
+  .desktop{ display: none !important; }
 }

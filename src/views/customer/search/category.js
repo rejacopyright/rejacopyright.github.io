@@ -23,7 +23,7 @@ function Index(){
               <Link to="/explore/search">
                 <div className="center pt-2 pb-1">
                   <div className="same-35 black-5 ppx-3 radius-10">
-                    <img src={require(`_dummy/icons/${r.icon}`).default} className="w-100" alt=""/>
+                    <img src={require(`${process.env.REACT_APP_IMAGES}/icons/${r.icon}`).default} className="w-100" alt=""/>
                   </div>
                 </div>
                 <p className="m-0 lh-1 text-8 truncate-1 text-dark f-600">{r.name}</p>

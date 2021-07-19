@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import {Topbar} from '_el/topbar'
 import {Tabs} from '_components/tab'
-import Package from './package'
+import Product from './product'
 import Gallery from './gallery'
 import Following from './following'
 
@@ -9,7 +9,7 @@ function Index(){
   const topBar = useRef()
   const [top, topSet] = useState(0)
   const tabs = [
-    {title: 'package', label: 'Paket', component: <Package />},
+    {title: 'product', label: 'Paket', component: <Product />},
     {title: 'gallery', label: 'Galeri', component: <Gallery />},
     {title: 'following', label: 'Mengikuti', component: <Following />},
   ]

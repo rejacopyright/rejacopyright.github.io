@@ -5,7 +5,7 @@ function Index(){
     return(
       <div className="fixed-bottom z-9 l-unset">
         <div className="center ml-auto same-50 radius-50 border border-gray bg-white p-2 m-3 pointer shadow" onClick={() => chatElSet(<ChatContainer />)}>
-          <img src={require('_dummy/icons/chat.png').default} className="w-100 ppx-3" alt=""/>
+          <img src={require(`${process.env.REACT_APP_IMAGES}/icons/chat.png`).default} className="w-100 ppx-3" alt=""/>
         </div>
       </div>
     )
@@ -29,7 +29,7 @@ function Index(){
               {
                 Array(2).fill().map((r, key) => (
                   <div className="center-left py-1" key={key}>
-                    <img src={require(`_dummy/avatar/c-${key+1}.png`).default} width="25" className="radius-50" alt=""/>
+                    <img src={require(`${process.env.REACT_APP_IMAGES}/avatar/c-${key+1}.png`).default} width="25" className="radius-50" alt=""/>
                     <div className="ml-2 pointer">
                       <p className="m-0 lh-12 bold">Reja Jamil</p>
                       <p className="m-0 lh-1 text-7 text-muted">username</p>
@@ -46,7 +46,7 @@ function Index(){
                 <ul className="conversation-list">
                   <li className="center-bottom j-left">
                     <div className="chat-avatar">
-                      <img src={`${require('_dummy/avatar/c-1.png').default}`} className="border" alt="female" />
+                      <img src={`${require(`${process.env.REACT_APP_IMAGES}/avatar/c-1.png`).default}`} className="border" alt="female" />
                     </div>
                     <div className="relative w-70">
                       <div className="conversation-text pt-2">
@@ -67,7 +67,7 @@ function Index(){
                       </div>
                     </div>
                     <div className="chat-avatar">
-                      <img src={`${require('_dummy/avatar/c-2.png').default}`} className="border" alt="male" />
+                      <img src={`${require(`${process.env.REACT_APP_IMAGES}/avatar/c-2.png`).default}`} className="border" alt="male" />
                     </div>
                   </li>
                 </ul>

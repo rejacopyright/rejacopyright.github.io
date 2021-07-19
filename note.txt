@@ -1,11 +1,56 @@
 --legacy-peer-deps
 
-@tarragon/swipeable-tabs --legacy-peer-deps
-react-custom-scrollbars --legacy-peer-deps
-react-froala-wysiwyg --legacy-peer-deps
-react-image-magnifiers --legacy-peer-deps
-react-skeleton-loader --legacy-peer-deps
-react-swipeable-bottom-sheet --legacy-peer-deps
+@tarragon/swipeable-tabs
+react-custom-scrollbars
+react-froala-wysiwyg
+react-image-magnifiers
+react-skeleton-loader
+react-swipeable-bottom-sheet
 
 
-npm i @date-io/moment"<2"
+/ ------------ NORMAL ------------
+
+@date-io/moment
+@emotion/core
+@emotion/styled
+@material-ui/core
+@material-ui/pickers
+apexcharts
+axios
+bootstrap
+classnames
+cors
+date-fns
+feather-icons
+jquery
+js-cookie
+metismenujs
+moment
+random-words
+react-apexcharts
+react-app-rewired
+react-beautiful-dnd
+react-copy-to-clipboard
+react-date-range
+react-element-to-jsx-string
+react-number-format
+react-rating
+react-redux
+react-router
+react-router-dom
+react-select
+react-slick
+react-sortable-hoc
+react-spinners-kit
+react-trello
+redux
+sass
+xlsx
+
+
+
+// ------------- // FOR GH PAGES // ------------- //
+
+Logn Replace
+Token Redux Ganti
+BrowserRouter => HashRouter

@@ -2,9 +2,9 @@ import React, {Suspense, useEffect, useState, useRef, useCallback} from 'react'
 import {Switch, Route} from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { ClassicSpinner } from 'react-spinners-kit'
-import Topbar from 'layouts/topbar'
-import MenuBar from 'layouts/menuBar'
-import LeftMenu from 'layouts/leftMenu'
+import Topbar from 'views/_layouts/topbar'
+import MenuBar from 'views/_layouts/menuBar'
+import LeftMenu from 'views/_layouts/leftMenu'
 import Chat from '_components/chat'
 
 import customer from 'routes/customer'
@@ -19,16 +19,12 @@ function Index(props){
   const [vendorPages, vendorPagesSet] = useState(false)
   const expired = useCallback(() => {
     if (false) {
-      props.dispatch({type:'LOGOUT'});
+      props.dispatch({type:'LOGOUT'})
     }
   }, [props])
-  window.addEventListener('mouseover', expired);
-  window.addEventListener('focus', expired);
-  useEffect(() => {
-    import('feather-icons').then(f => f.replace());
-    require('_assets/js/app');
-    return () => delete require.cache[require.resolve('_assets/js/app')];
-  }, [])
+  window.addEventListener('mouseover', expired)
+  window.addEventListener('focus', expired)
+  useEffect(() => import('feather-icons').then(f => f.replace()), [])
   useEffect(() => {
     const vendorRoutes = (props.location.pathname).split('/')[1] === 'vendor'
     vendorPagesSet(vendorRoutes)
@@ -36,22 +32,21 @@ function Index(props){
       document.body.setAttribute('data-layout', 'nav')
     }else {
       document.body.setAttribute('data-layout', 'topnav')
-      // delete require.cache[require.resolve('_assets/js/app')];
     }
     routesSet(vendorRoutes ? vendor : customer)
   }, [props.location.pathname, vendorPages])
   useEffect(() => {
-    document.querySelector('#search').value = '';
-    expired();
+    document.querySelector('#search') && (document.querySelector('#search').value = '')
+    expired()
     return () => {
-      window.removeEventListener('mouseover', {});
-      window.removeEventListener('focus', {});
+      window.removeEventListener('mouseover', {})
+      window.removeEventListener('focus', {})
     }
-  }, [props, expired]);
+  }, [props, expired])
   return (
     <div id="wrapper">
       <Topbar />
-      <LeftMenu show={vendorPages} />
+      {vendorPages && <LeftMenu />}
       <div className="content-page ou mt-0" ref={cp}>
         <div className="content">
           <Suspense fallback={<Loading />}>

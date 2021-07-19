@@ -13,8 +13,8 @@ export const Topbar = forwardRef((props, ref) => {
         <div className="d-flex center border-bottom py-2">
           <div className="col-auto px-2">
             {!props.back && !props.logo && <div className="py-2"></div>}
-            { props.back && <div className="pl-2 d-inline" onClick={() => history.goBack()}><img src={require('_assets/images/icons/back-1.png').default} alt="" height="25"/></div> }
-            { props.logo && <div className="pl-2 d-inline" onClick={() => history.goBack()}><img src={require('_assets/images/logo.png').default} alt="" height="25"/></div> }
+            { props.back && <div className="pl-2 d-inline" onClick={() => history.goBack()}><img src={require(`${process.env.REACT_APP_IMAGES}/icons/back-1.png`).default} alt="" height="25"/></div> }
+            { props.logo && <div className="pl-2 d-inline" onClick={() => history.goBack()}><img src={require(`${process.env.REACT_APP_IMAGES}/logo/logo.png`).default} alt="" height="25"/></div> }
           </div>
           <div className="col pl-0 pr-2">{props.children}</div>
         </div>

@@ -1,9 +1,9 @@
 import React, {Fragment, useState, useRef, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import {Truncate} from '_lib/code'
+import {Truncate} from '_templates/lib/code'
 import Modal from '_components/modal'
 import Slider from 'react-slick'
-import '_assets/libs/slick/slick.scss'
+import '_assets/plugins/slick/slick.scss'
 import {Swipe} from '_el/swipe'
 
 export function Images(props){
@@ -29,7 +29,7 @@ export function Images(props){
       <Slider {...settings}>
         {
           img.map((r, key) => (
-            <div className="text-center" key={key}><img className="w-100" src={`${r || require('_dummy/images/1.jpg').default}`} alt=""/>
+            <div className="text-center" key={key}><img className="w-100" src={`${r || require(`${process.env.REACT_APP_IMAGES}/products/1.jpg`).default}`} alt=""/>
           </div>
           ))
         }
@@ -100,7 +100,7 @@ export function List(props) {
         props.header &&
         <div className="center py-2">
           <Link from="/" to="/rejajamil" className="pl-2">
-            <img className="same-30 radius-100 ppx-1 border border-gray" src={require('_dummy/images/5.jpg').default} alt=""/>
+            <img className="same-30 radius-100 ppx-1 border border-gray" src={require(`${process.env.REACT_APP_IMAGES}/products/5.jpg`).default} alt=""/>
           </Link>
           <Link from="/" to="/rejajamil" className="px-2">
             <p className="f-600 m-0 text-10 lh-12">Reja Jamil</p>
@@ -119,7 +119,7 @@ export function List(props) {
         <Slider {...settings}>
           {
             img.map((r, key) => (
-              <div className="text-center" key={key}> <img className="w-100" src={`${r || require('_dummy/images/1.jpg').default}`} alt=""/> </div>
+              <div className="text-center" key={key}> <img className="w-100" src={`${r || require(`${process.env.REACT_APP_IMAGES}/products/1.jpg`).default}`} alt=""/> </div>
             ))
           }
         </Slider>
@@ -136,8 +136,8 @@ export function List(props) {
         }
       </div>
       <div className="center-left">
-        <div className="px-2"> <img className="same-20" src={require('_dummy/icons/love-fill.png').default} alt=""/> </div>
-        <div className="px-2"> <img className="same-20" src={require('_dummy/icons/comment.png').default} alt=""/> </div>
+        <div className="px-2"> <img className="same-20" src={require(`${process.env.REACT_APP_IMAGES}/icons/heart-red.png`).default} alt=""/> </div>
+        <div className="px-2"> <img className="same-20" src={require(`${process.env.REACT_APP_IMAGES}/icons/comment.png`).default} alt=""/> </div>
         <div className="f-500 text-8 text-muted ml-auto pr-2">32 menit yang lalu</div>
       </div>
       <div className="p-2">
@@ -157,7 +157,7 @@ export function List(props) {
         <div className="f-600 text-muted lh-2" onClick={() => isOpenSet(!isOpen)}> Lihat Semua Komentar </div>
       </div>
       <div className="px-2 pt-1 center-left">
-        <img className="same-20 radius-100" src={require('_dummy/images/6.jpg').default} alt=""/>
+        <img className="same-20 radius-100" src={require(`${process.env.REACT_APP_IMAGES}/products/6.jpg`).default} alt=""/>
         <div className="text-muted pl-2"> Tambahkan Komentar... </div>
         <div className="same-20 border radius-50 center pointer ml-auto"><i className="uil uil-plus text-gray"/></div>
       </div>
@@ -183,7 +183,7 @@ export function Grid(props){
   }, []);
   return(
     <div className={`col-4 center p-0 ppx-1 oh`} ref={refImg}>
-      <div className="w-100 bg-img" onClick={props.onClick} data-toggle="modal" data-target={`#${props.target}`} data-backdrop={props.backdrop && 'static'} style={{backgroundImage: `url(${props.img || require('_dummy/images/1.jpg').default})`, height: imgHeight }}>
+      <div className="w-100 bg-img" onClick={props.onClick} data-toggle="modal" data-target={`#${props.target}`} data-backdrop={props.backdrop && 'static'} style={{backgroundImage: `url(${props.img || require(`${process.env.REACT_APP_IMAGES}/products/1.jpg`).default})`, height: imgHeight }}>
       </div>
     </div>
   )

@@ -51,9 +51,12 @@ const customStyles = {
     '&:hover':{
       backgroundColor: '#fafafa',
       color: 'black',
+      cursor: 'pointer',
+      fontWeight: 700,
     },
     padding: '3px 10px',
     fontSize: '9pt',
+    fontWeight: 600,
     border: 'unset',
   }),
   control: (provided, state) => ({
@@ -65,6 +68,7 @@ const customStyles = {
     borderRadius: 5,
     borderColor: '#eee',
     padding: 0,
+    cursor: 'pointer',
     minHeight: 10,
     boxShadow: 'unset',
     backgroundColor: '#fafafa',

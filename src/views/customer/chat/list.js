@@ -45,7 +45,7 @@ function Index(){
       <div className="pb-3">
         {
           Array(12).fill().map((r, key) => (
-            <Chat key={key} img={require(`_dummy/avatar/c-${key+1}.png`).default} size="same-50" />
+            <Chat key={key} img={require(`${process.env.REACT_APP_IMAGES}/avatar/c-${key+1}.png`).default} size="same-50" />
           ))
         }
       </div>

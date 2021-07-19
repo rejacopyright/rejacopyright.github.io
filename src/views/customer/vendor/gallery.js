@@ -10,11 +10,11 @@ function Index(props){
     <div className="row m-0">
       {
         Array(18).fill().map((r, key) => (
-          <Image img={require(`_dummy/sample/${(key+1)}.jpg`).default} key={key} onClick={() => isOpenSet(!isOpen)} />
+          <Image img={require(`${process.env.REACT_APP_IMAGES}/products/${(key+1)}.jpg`).default} key={key} onClick={() => isOpenSet(!isOpen)} />
         ))
       }
       <Swipe fullScreen noBar onSwipeChange={e => isOpenSet(e)} open={isOpen}>
-        <List img={[require(`_dummy/sample/2.jpg`).default, require(`_dummy/sample/3.jpg`).default]} />
+        <List img={[require(`${process.env.REACT_APP_IMAGES}/products/2.jpg`).default, require(`${process.env.REACT_APP_IMAGES}/products/3.jpg`).default]} />
       </Swipe>
     </div>
   )

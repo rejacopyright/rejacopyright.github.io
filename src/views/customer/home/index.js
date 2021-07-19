@@ -6,7 +6,7 @@ import {Topbar} from '_el/topbar'
 // import {List as Gallery} from '_el/gallery'
 import st from '_assets/scss/tes.module.sass'
 import Slider from 'react-slick'
-import '_assets/libs/slick/slick.scss'
+import '_assets/plugins/slick/slick.scss'
 import category from 'views/category'
 import Rating from 'react-rating'
 // const api = require('js-cookie').getJSON()
@@ -39,10 +39,10 @@ function Header(){
   }
   return(
     <Slider {...settings}>
-      <div className="text-center px-2 px-md-0"> <img className="w-100 radius-10" src={require('_dummy/images/header_1.jpg').default} alt=""/> </div>
-      <div className="text-center px-2 px-md-0"> <img className="w-100 radius-10" src={require('_dummy/images/header_2.jpg').default} alt=""/> </div>
-      <div className="text-center px-2 px-md-0"> <img className="w-100 radius-10" src={require('_dummy/images/header_3.jpg').default} alt=""/> </div>
-      <div className="text-center px-2 px-md-0"> <img className="w-100 radius-10" src={require('_dummy/images/header_4.jpg').default} alt=""/> </div>
+      <div className="text-center px-2 px-md-0"> <img className="w-100 radius-10" src={require(`${process.env.REACT_APP_IMAGES}/headers/header_1.jpg`).default} alt=""/> </div>
+      <div className="text-center px-2 px-md-0"> <img className="w-100 radius-10" src={require(`${process.env.REACT_APP_IMAGES}/headers/header_2.jpg`).default} alt=""/> </div>
+      <div className="text-center px-2 px-md-0"> <img className="w-100 radius-10" src={require(`${process.env.REACT_APP_IMAGES}/headers/header_3.jpg`).default} alt=""/> </div>
+      <div className="text-center px-2 px-md-0"> <img className="w-100 radius-10" src={require(`${process.env.REACT_APP_IMAGES}/headers/header_4.jpg`).default} alt=""/> </div>
     </Slider>
   )
 }
@@ -66,9 +66,9 @@ function Category(props){
         category.map((r, key) => (
           <div className={`text-center hpx-${props.height || '35'} center px-1 relative`} key={key}>
             <div className="border w-100 h-100 radius-5 oh">
-              <div className={`w-100 h-100 ${r.selected ? 'border-primary o-10' : 'border-primary o-0'}`} style={{ background: `url(${require(`_assets/images/bg-flat-4.jpg`).default}) center / cover no-repeat` }} />
+              <div className={`w-100 h-100 ${r.selected ? 'border-primary o-10' : 'border-primary o-0'}`} style={{ background: `url(${require(`${process.env.REACT_APP_IMAGES}/templates/bg-flat-4.jpg`).default}) center / cover no-repeat` }} />
               <div className="absolute-center center p-1">
-                <img src={require(`_dummy/icons/${r.icon}`).default} height="20"  className={`mr-1 ${r.selected && 'img-shadow'}`} alt=""/>
+                <img src={require(`${process.env.REACT_APP_IMAGES}/category/${r.icon}`).default} height="20"  className={`mr-1 ${r.selected && 'img-shadow'}`} alt=""/>
                 <div className={`lh-1 truncate-2 ${r.selected && 'bold'}`}>
                   {r.name}
                 </div>
@@ -111,7 +111,7 @@ function Flash(props){
           <div className="p-1" key={key}>
             <div className="radius-5 bg-white oh">
               <div className="position-relative">
-                <div ref={productImg} className="w-100 mx-auto oh bg-img" style={{ backgroundImage: `url(${require(`_dummy/images/${key+7}.jpg`).default})`, height: productHeight }}> </div>
+                <div ref={productImg} className="w-100 mx-auto oh bg-img" style={{ backgroundImage: `url(${require(`${process.env.REACT_APP_IMAGES}/products/${key+7}.jpg`).default})`, height: productHeight }}> </div>
               </div>
               <div className="px-2 py-1 position-relative">
                 {/*<p className="mt-0 mb-1 lh-12 text-8 text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>*/}
@@ -158,7 +158,7 @@ function FeaturedVendor(props){
         (
           <div className="p-1" key={key}>
             <div className="position-relative border border-gray oh radius-15 p-1">
-              <div ref={productImg} className="w-100 mx-auto radius-50 oh bg-img" style={{ backgroundImage: `url(${require(`_dummy/avatar/woman-${key+1}.png`).default})`, height: productHeight }}> </div>
+              <div ref={productImg} className="w-100 mx-auto radius-50 oh bg-img" style={{ backgroundImage: `url(${require(`${process.env.REACT_APP_IMAGES}/avatar/woman-${key+1}.png`).default})`, height: productHeight }}> </div>
             </div>
             <div className="px-2 py-1 position-relative">
               <p className="mt-0 mb-1 lh-12 text-7 text-truncate">Photography</p>
@@ -198,7 +198,7 @@ function FeaturedProduct(props){
         Array(8).fill().map((r, key) =>
         (
           <div className="p-1" key={key}>
-            <div ref={productImg} className="w-100 mx-auto oh bg-img" style={{ backgroundImage: `url(${require(`_dummy/images/${key+1}.jpg`).default})`, height: productHeight }}> </div>
+            <div ref={productImg} className="w-100 mx-auto oh bg-img" style={{ backgroundImage: `url(${require(`${process.env.REACT_APP_IMAGES}/products/${key+1}.jpg`).default})`, height: productHeight }}> </div>
             <div className="py-1 position-relative">
               <p className="mt-0 mb-1 lh-12 text-7 text-truncate">Lorem ipsum dolor sit amet.</p>
             </div>
@@ -221,11 +221,11 @@ function Product(props){
   }, [])
   return(
     <div className="radius-5 mb-2 bg-white shadow-sm oh pointer">
-      <Link to="/package/123/123">
+      <Link to="/product/123/123">
         <div className="position-relative">
           <div className="position-absolute lh-1 l-0 t-1 white-50 p-1 pr-2 radius-right-10">
             <div className="text-8 center-left">
-              <img src={require('_dummy/icons/super.png').default} width="12" alt=""/>
+              <img src={require(`${process.env.REACT_APP_IMAGES}/icons/super.png`).default} width="12" alt=""/>
               <div className="text-truncate pl-1 text-dark bold"> aulianshop </div>
             </div>
           </div>
@@ -235,13 +235,13 @@ function Product(props){
           </div>
         </div>
         <div className="p-2 pb-3 position-relative">
-          <p className="mt-0 mb-1 lh-1 truncate-2 text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit sfsdfsdf fsdfsdf sdf sdf</p>
+          <p className="mt-0 mb-1 lh-12 f-600 truncate-1 text-10 text-dark">Lorem ipsum dolor sit amet amet</p>
           <h6 className="f-700 lh-1 text-dark mt-1">Rp. 1.500.000</h6>
           <div className="position-absolute lh-15 l-0 b-0 p-2 f-600 text-muted text-10">
             <Rating
               initialRating={4}
-              fullSymbol={<img src={require('_assets/images/icons/star.png').default} width="10" alt=""/>}
-              emptySymbol={<img src={require('_assets/images/icons/star-o.png').default} width="10" alt=""/>}
+              fullSymbol={<img src={require(`${process.env.REACT_APP_IMAGES}/icons/star.png`).default} width="10" alt=""/>}
+              emptySymbol={<img src={require(`${process.env.REACT_APP_IMAGES}/icons/star-o.png`).default} width="10" alt=""/>}
               readonly
               />
             <span className="text-8 text-dark"> (89)</span>
@@ -266,7 +266,7 @@ function Index(props){
           </div>
           <div className="col-auto center pl-2">
             <Link to="/chat">
-              <img src={require('_dummy/icons/chat.png').default} height="22" alt=""/>
+              <img src={require(`${process.env.REACT_APP_IMAGES}/icons/chat.png`).default} height="22" alt=""/>
             </Link>
           </div>
         </div>
@@ -283,7 +283,7 @@ function Index(props){
           <div className="card m-0">
             <div className="card-body radius-10 p-2">
               <div className="center-left p-1">
-                <img src={require(`_dummy/icons/flash.png`).default} className="mr-2" height="25" alt=""/>
+                <img src={require(`${process.env.REACT_APP_IMAGES}/icons/flash.png`).default} className="mr-2" height="25" alt=""/>
                 <h6 className="m-0 lh-0 text-primary text-16 f-800 i desktop">Flash Offer</h6>
                 <div className="mx-auto">
                   <div className="hpx-25 bold lh-1 center-inline mr-1 desktop text-8">Dalam : </div>
@@ -335,7 +335,7 @@ function Index(props){
           Array(5).fill().map((r, key) =>
           (
             <div className="col-6 col-md-2 mt-2s px-1 px-md-2" key={key}>
-              <Product img={require(`_dummy/images/${key+1}.jpg`).default} />
+              <Product img={require(`${process.env.REACT_APP_IMAGES}/products/${key+1}.jpg`).default} />
             </div>
           ))
         }

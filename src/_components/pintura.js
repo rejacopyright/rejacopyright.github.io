@@ -1,6 +1,6 @@
 import {useEffect, useMemo, useState, useRef, Fragment} from 'react'
-import * as pin from '_assets/libs/pintura'
-import '_assets/libs/pintura/style.scss'
+import * as pin from '_assets/plugins/pintura'
+import '_assets/plugins/pintura/style.scss'
 import emot from '_components/emoji'
 
 async function Editor(props){

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Modal(props){
   return (
-    <div className={`modal ${props.fade && 'fade'} z-99999`} id={props.id} role="dialog" aria-hidden="true">
+    <div className={`modal ${props.fade && 'fade'} z-99999 ${props.right && 'modal-right'} ${props.left && 'modal-left'} ${props.top && 'modal-top'} ${props.bottom && 'modal-bottom'}`} id={props.id} role="dialog" aria-hidden="true">
       <div className={`modal-dialog ${!props.top && 'modal-dialog-centered'} ${props.modalClass}`}>
         <div className={`modal-content ${props.contentClass}`}>
           {

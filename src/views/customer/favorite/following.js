@@ -8,7 +8,7 @@ function Index(){
   return(
     <div className="">
       {
-        Array(10).fill().map((r, key) => <Vendor key={key} size="same-40" className="px-2 py-1" bodyClass="border bg-white" btnClass="ml-auto" followClass="bg-light" img={require(`_dummy/avatar/c-${RandomNumber(1,10)}.png`).default} name={Capitalize(Name({exactly: 2, join: ' '}))} username={Name()} unfollow />)
+        Array(10).fill().map((r, key) => <Vendor key={key} size="same-40" className="px-2 py-1" bodyClass="border bg-white" btnClass="ml-auto" followClass="bg-light" img={require(`${process.env.REACT_APP_IMAGES}/avatar/c-${RandomNumber(1,10)}.png`).default} name={Capitalize(Name({exactly: 2, join: ' '}))} username={Name()} unfollow />)
       }
     </div>
   )

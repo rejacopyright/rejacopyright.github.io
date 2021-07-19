@@ -48,7 +48,7 @@ function InputIcon(props, ref){
       }
       <div className="position-relative">
         <input ref={ref} type={props.password ? 'password' : 'text'} name={props.name} defaultValue={props.defaultValue} className={`form-control ${props.sm && 'form-control-sm'} ${props.className} radius-5`} placeholder={props.placeholder} onChange={props.onChange} onBlur={props.onBlur} spellCheck={false} autoFocus={props.autoFocus} readOnly={props.readOnly} disabled={props.disabled} style={props.icon ? props.right ? {paddingRight: space} : {paddingLeft: space} : {}} />
-        { props.icon && <div className={`absolute-center-v ppx-5 text-dark ${props.right && 'r-0'}`} ref={width}>{props.icon}</div> }
+        { props.icon && <div className={`absolute-center-v p-2 text-dark ${props.right && 'r-0'}`} ref={width}>{props.icon}</div> }
       </div>
     </div>
   );
@@ -64,7 +64,7 @@ function TextareaFunc(props, ref){
         props.title &&
         <small className="d-block">{props.title}</small>
       }
-      <textarea ref={ref} type="text" name={props.name} defaultValue={props.defaultValue} className={`form-control ${props.className} ${props.sm && 'text-9'}`} placeholder={props.placeholder} onChange={props.onChange} onBlur={props.onBlur} rows={props.rows} spellCheck={false} autoFocus={props.autoFocus} style={{resize: `${props.noResize ? 'none' : 'both'}`}} />
+      <textarea ref={ref} type="text" name={props.name} defaultValue={props.defaultValue} value={props.value} className={`form-control ${props.className} ${props.sm && 'text-9'}`} placeholder={props.placeholder} onChange={props.onChange} onBlur={props.onBlur} rows={props.rows} spellCheck={false} autoFocus={props.autoFocus} style={{resize: `${props.noResize ? 'none' : 'both'}`}} />
     </div>
   )
 }
@@ -80,14 +80,14 @@ function RadioFunc(props, ref){
 // Checkbox
 function CheckboxFunc(props, ref){
   return (
-    <div className={`custom-control ${props.switch ? 'custom-switch' : 'custom-checkbox'} ${props.rowClass} ${props.theme && `checkbox-${props.theme}`} ${props.circle && `checkbox-circle`}`}>
+    <div className={`center-left custom-control ${props.switch ? 'custom-switch' : 'custom-checkbox'} ${props.rowClass} ${props.theme && `checkbox-${props.theme}`} ${props.circle && `checkbox-circle`}`}>
       <input type="checkbox" ref={ref} id={props.id} name={props.name} value={props.value} defaultChecked={props.checked || false} className="custom-control-input" onChange={props.onChange} disabled={props.disabled} />
-      <label style={props.small && { lineHeight: 2.2 }} className={`custom-control-label ${props.small && 'small f-600'} ${props.labelClass}`} htmlFor={props.id}> {props.label} </label>
+      <label className={`lh-1 custom-control-label ${props.small && 'small f-600'} ${props.labelClass}`} htmlFor={props.id}> {props.label} </label>
     </div>
   )
 }
-// Desimal
-function DesimalFunc(props, ref) {
+// Decimal
+function DecimalFunc(props, ref) {
   const [value, valueSet] = useState(props.min && props.min >= props.value ? props.min : props.max && props.max <= props.value ? props.max : props.value);
   const [error] = useState(props.value ? '' : props.error);
   useEffect(() => {
@@ -148,7 +148,7 @@ function DesimalFunc(props, ref) {
           onValueChange={onChange}
           value={parseFloat(value)}
           defaultValue={parseFloat(value)}
-          className={`form-control ${props.sm && 'form-control-sm'} border border-gray ${props.right ? 'border-right-none' : 'border-left-none'}`}
+          className={`form-control ${props.sm && 'form-control-sm'} border border-gray ${props.right ? 'border-right-none' : 'border-left-none'} ${props.inputClass && props.inputClass}`}
           readOnly={props.readOnly}
           placeholder={props.placeholder}
           autoFocus={props.autoFocus} />
@@ -170,7 +170,7 @@ export const Inputicon = forwardRef(InputIcon);
 export const Textarea = forwardRef(TextareaFunc);
 export const Radio = forwardRef(RadioFunc);
 export const Checkbox = forwardRef(CheckboxFunc);
-export const Desimal = forwardRef(DesimalFunc);
+export const Decimal = forwardRef(DecimalFunc);
 // PropTypes
 Input.propTypes = {
   name: PropTypes.any.isRequired,
@@ -186,6 +186,6 @@ Checkbox.propTypes = {
 Textarea.propTypes = {
   name: PropTypes.any.isRequired,
 }
-Desimal.propTypes = {
+Decimal.propTypes = {
   name: PropTypes.any.isRequired,
 }

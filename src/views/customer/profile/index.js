@@ -8,10 +8,10 @@ function Card(props){
     <div className="row">
       <div className="col px-2 my-1">
         <Link to={props.to || '#'} className="p-2 center-left">
-          <img src={require(`_dummy/icons/${props.icon || '/placeholder/image'}.png`).default} alt="" height="18" className="" />
+          <img src={require(`${process.env.REACT_APP_IMAGES}/icons/${props.icon || 'image'}.png`).default} alt="" height="18" className="" />
           <div className="text-11 lh-0 text-dark bold px-3"> {props.name || 'Lorem ipsum'} </div>
           <div className="">{props.children}</div>
-          <img src={require(`_assets/images/icons/next.png`).default} alt="" height="16" className="ml-auto" />
+          <img src={require(`${process.env.REACT_APP_IMAGES}/icons/next.png`).default} alt="" height="16" className="ml-auto" />
         </Link>
       </div>
     </div>
@@ -30,7 +30,7 @@ function Index(){
           </div>
           <div className="col center-right text-right">
             <Link to="/settings">
-              <img src={require(`_dummy/icons/gear.png`).default} className="same-20" alt=""/>
+              <img src={require(`${process.env.REACT_APP_IMAGES}/icons/gear.png`).default} className="same-20" alt=""/>
             </Link>
           </div>
         </div>

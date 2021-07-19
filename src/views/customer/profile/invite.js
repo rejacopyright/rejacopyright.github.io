@@ -1,5 +1,5 @@
 import {useEffect} from 'react'
-import Image from '_assets/images/maintenance.png'
+import Image from '_assets/images/templates/maintenance.png'
 export default function PageNotFound(props){
   useEffect(() => {
     document.title = '404 Not Found';

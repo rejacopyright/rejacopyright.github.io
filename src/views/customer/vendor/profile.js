@@ -4,7 +4,7 @@ import {Tabs} from '_components/tab'
 import {Topbar} from '_el/topbar'
 import {Profile} from '_el/user'
 import Gallery from './gallery'
-import Package from './package'
+import Product from './product'
 
 function Info(){
   return(
@@ -22,7 +22,7 @@ function Index(){
   const [top, topSet] = useState(0)
   const tabs = [
     {title: 'gallery', label: 'Galeri', component: <Gallery />},
-    {title: 'package', label: 'Paket', component: <Package />},
+    {title: 'product', label: 'Paket', component: <Product />},
   ]
   useEffect(() => {
     topSet(topBar.current.offsetHeight-2)

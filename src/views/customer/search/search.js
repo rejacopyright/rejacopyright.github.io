@@ -1,11 +1,11 @@
 import React, {useEffect, useState, useRef} from 'react'
 import lay from '_config/layout'
-import {Category} from '_el/package'
+import {Category} from '_el/product'
 import {Topbar} from '_el/topbar'
 import {Inputicon} from '_components/form'
 import {Swipe} from '_el/swipe'
 import {List as Vendor} from '_el/user'
-import {Grid as Package} from '_el/package'
+import {Grid as Product} from '_el/product'
 // const api = require('js-cookie').getJSON()
 
 function Index(){
@@ -50,14 +50,14 @@ function Index(){
       <div className="row m-0 ppx-2">
         {
           Array(2).fill().map((r, key) => (
-            <div className="col-12 col-md-6 col-xl-4 ppx-1" key={key}> <Vendor img={require(`_dummy/avatar/c-${key+1}.png`).default} username="rejajamil" /> </div>
+            <div className="col-12 col-md-6 col-xl-4 ppx-1" key={key}> <Vendor img={require(`${process.env.REACT_APP_IMAGES}/avatar/c-${key+1}.png`).default} username="rejajamil" /> </div>
           ))
         }
       </div>
       <div className="row m-0 ppx-2">
         {
           Array(8).fill().map((r, key) => (
-            <div className="col-6 col-md-3 col-xl-2 ppx-1" key={key}> <Package img={require(`_dummy/sample/${key+1}.jpg`).default} username avatar={require(`_dummy/avatar/c-${key+1}.png`).default} /> </div>
+            <div className="col-6 col-md-3 col-xl-2 ppx-1" key={key}> <Product img={require(`${process.env.REACT_APP_IMAGES}/products/${key+1}.jpg`).default} username avatar={require(`${process.env.REACT_APP_IMAGES}/avatar/c-${key+1}.png`).default} /> </div>
           ))
         }
       </div>

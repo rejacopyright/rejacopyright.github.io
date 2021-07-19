@@ -5,7 +5,7 @@ import lay from '_config/layout'
 const chat = [
   { path: "/chat", exact: true, component: lazy(() => import('views/customer/chat/list')) },
   { path: "/chat/:other", exact: true, component: lazy(() => import('views/customer/chat/detail')) },
-  { path: "*", exact: false, component: lazy(() => import('layouts/pageNotFound')) },
+  { path: "*", exact: false, component: lazy(() => import('views/_layouts/pageNotFound')) },
 ]
 function Index(){
   useEffect(() => {

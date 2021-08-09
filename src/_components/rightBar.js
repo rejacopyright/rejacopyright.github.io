@@ -1,6 +1,24 @@
-import React, { Fragment } from 'react';
-import {Link} from 'react-router-dom';
-function Footer(props){
+import { useEffect, Fragment } from 'react'
+import {Link} from 'react-router-dom'
+import $ from 'jquery'
+function Index(props){
+  useEffect(() => {
+    $(document).on('click', '.right-bar-toggle', function (e) {
+      $('body').toggleClass('right-bar-enabled')
+    })
+    $(document).on('click', 'body', function (e) {
+      if ($(e.target).closest('.right-bar-toggle, .right-bar').length > 0) {
+        return
+      }
+      if ($(e.target).closest('.left-side-menu, .side-nav').length > 0 || $(e.target).hasClass('button-menu-mobile')
+      || $(e.target).closest('.button-menu-mobile').length > 0) {
+        return
+      }
+      $('body').removeClass('right-bar-enabled')
+      $('body').removeClass('sidebar-enable')
+      return
+    })
+  }, [])
   return (
     <Fragment>
       <div className={`right-bar ${props.className}`}>
@@ -16,4 +34,4 @@ function Footer(props){
     </Fragment>
   )
 }
-export default Footer;
+export default Index

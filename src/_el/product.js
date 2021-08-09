@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import category from 'views/category'
 import Slider from 'react-slick'
 import '_assets/plugins/slick/slick.scss'
-import {Truncate} from '_templates/lib/code'
+import {Truncate} from '_utils/typo'
 import Modal from '_components/modal'
 import {Swipe} from '_el/swipe'
 import {Follow as Vendor} from '_el/user'
@@ -31,7 +31,7 @@ export function Category(props){
     <Slider {...settings}>
       {
         category.map((r, key) => (
-          <div className={`text-center hpx-${props.height || '35'} center px-1`} key={key}> <div className={`border w-100 h-100 center radius-5 p-1 lh-1 truncate-2 ${r.selected ? 'bg-light border-gray' : 'bg-white'}`}>{r.name}</div> </div>
+          <div className={`text-center hpx-${props.height || '35'} center px-1`} key={key}> <div className={`border w-100 h-100 center radius-5 p-1 lh-1 truncate-2 ${r.selected ? 'bg-light border-gray' : 'bg-white'}`}>{r.label}</div> </div>
         ))
       }
     </Slider>

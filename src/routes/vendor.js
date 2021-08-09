@@ -27,7 +27,7 @@ const routes = [
   { path: "/vendor/pages/profile", exact: false, component: lazy(() => import(`_templates/pages/profile/index`)) },
   { path: "/vendor/pages/timeline", exact: false, component: lazy(() => import(`_templates/pages/timeline/index`)) },
   // CODING
-  { path: "/vendor/coding", exact: true, component: lazy(() => import(`_components/coding`)) },
+  { path: "/vendor/utils/typo", exact: true, component: lazy(() => import(`_templates/utils/typo`)) },
   // FORMS
   { path: "/vendor/form/advanced", exact: true, component: lazy(() => import(`_templates/form/advanced`)) },
   { path: "/vendor/form/basic", exact: true, component: lazy(() => import(`_templates/form/basic`)) },
@@ -59,13 +59,13 @@ const routes = [
   { path: "/vendor/ui/load", exact: true, component: lazy(() => import(`_templates/ui/load`)) },
   { path: "/vendor/ui/loading", exact: true, component: lazy(() => import(`_templates/ui/loading`)) },
   { path: "/vendor/ui/modal", exact: true, component: lazy(() => import(`_templates/ui/modal`)) },
+  { path: "/vendor/ui/pagination", exact: true, component: lazy(() => import(`_templates/ui/pagination`)) },
+  { path: "/vendor/ui/popover", exact: true, component: lazy(() => import(`_templates/ui/popover`)) },
   { path: "/vendor/ui/progress", exact: true, component: lazy(() => import(`_templates/ui/progress`)) },
   { path: "/vendor/ui/tab", exact: true, component: lazy(() => import(`_templates/ui/tab`)) },
   { path: "/vendor/ui/table", exact: true, component: lazy(() => import(`_templates/ui/table`)) },
   { path: "/vendor/ui/title", exact: true, component: lazy(() => import(`_templates/ui/title`)) },
 
-  // User
-  { path: "/:username", exact: true, component: lazy(() => import('views/customer/vendor/profile')) },
   // 404
   { path: "*", exact: true, component: lazy(() => import(`views/_layouts/pageNotFound`)) },
 ];

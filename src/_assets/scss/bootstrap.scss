@@ -2841,7 +2841,7 @@ input[type="button"].btn-block {
 .input-group-sm .input-group-text,
 .input-group-sm .input-group-prepend .btn,
 .input-group-sm .input-group-append .btn {
-  padding: 0.25rem 0.5rem !important;
+  padding: 0.25rem 0.5rem;
   font-size: 0.76562rem !important;
   line-height: 1.2 !important;
   border-radius: 0.25rem; }
@@ -2909,7 +2909,7 @@ input[type="button"].btn-block {
   .custom-control-label::before {
     position: absolute;
     top: 0.15625rem;
-    left: -1.3rem;
+    left: -1.25rem;
     display: block;
     width: 1rem;
     height: 1rem;
@@ -2923,7 +2923,7 @@ input[type="button"].btn-block {
     left: -1.4rem;
     display: block;
     width: 1.2rem;
-    height: 1.2rem;
+    height: 1.5rem;
     content: "";
     background: no-repeat 50% / 50% 50%; }
 
@@ -4812,7 +4812,7 @@ a.close.disabled {
   background-color: $white;
   background-clip: padding-box;
   border: 1px solid $light;
-  border-radius: 0.3rem; }
+  border-radius: 0.5rem; }
   .popover .arrow {
     position: absolute;
     display: block;
@@ -4894,9 +4894,9 @@ a.close.disabled {
       border-left-color: $white; }
 
 .popover-header {
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   margin-bottom: 0;
-  font-size: 0.875rem;
+  font-size: 11pt;
   background-color: $light;
   border-bottom: 1px solid $lightGrey;
   border-top-left-radius: calc(0.5rem - 1px);
@@ -4905,8 +4905,9 @@ a.close.disabled {
     display: none; }
 
 .popover-body {
-  padding: 0.5rem 0.75rem;
-  color: $gray; }
+  padding: 0.25rem 0.75rem;
+  font-size: 9pt;
+  color: $dark; }
 
 .carousel {
   position: relative; }
@@ -5231,7 +5232,7 @@ button.bg-dark:focus {
   background-color: transparent !important; }
 
 .border {
-  border: 1px solid $light !important; }
+  border: 1px solid $lightGrey !important; }
 
 .border-top {
   border-top: 1px solid $light !important; }

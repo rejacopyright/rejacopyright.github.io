@@ -40,7 +40,7 @@ function Product(props){
               {
                 props.discount && (
                   <div className="position-absolute lh-1 r-0 b-0 p-1">
-                    <span className="badge badge-warning badge-pill">{props.discount}% OFF</span>
+                    <span className="badge badge-info">{props.discount}% OFF</span>
                   </div>
                 )
               }
@@ -141,9 +141,6 @@ function Product(props){
 function Filter(props){
   const [sortBy, sortBySet] = useState('name')
   const [status, statusSet] = useState(1)
-  const cat_select = useMemo(() => category.map(r => {
-    return {value: r.name.toLowerCase(), label: r.name}
-  }), [])
   const sorts = useMemo(() => {
     return [
       {value: 'name', label: 'Nama'},
@@ -166,7 +163,7 @@ function Filter(props){
   return(
     <div className="row m-0">
       <div className="col-12">
-        <Scrollbars style={{ height: '60vh' }} autoHide autoHideDuration={10}>
+        <Scrollbars autoHeight autoHeightMax="60vh" autoHide autoHideDuration={10}>
           <h5 className="m-0 f-700 border-bottom pb-2 border-2">Filter Berdasarkan</h5>
           {/*Status*/}
           <div className="bg-smoke radius-5 p-3 mt-3">
@@ -186,7 +183,7 @@ function Filter(props){
           {/*Kategori*/}
           <div className="p-1 mt-3">
             <h6 className="mt-0 mb-2 f-700">Kategori</h6>
-            <Select name="select" sm rowClass="" placeholder="Semua Kategori" data={cat_select} label="name" onChange={() => ''} />
+            <Select name="select" sm rowClass="" placeholder="Semua Kategori" data={category} label="name" onChange={() => ''} />
           </div>
           {/*Lainnya*/}
           <div className="bg-smoke radius-5 p-3 mt-3">

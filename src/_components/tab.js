@@ -1,8 +1,8 @@
 import {Fragment, useState, useEffect, useRef} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import { Tabs as Container, Tab } from '@tarragon/swipeable-tabs'
 
-export function Swipe(props){
+function SwipeFunction(props){
   const [tab, tabSet] = useState()
   const style = {
     tab: {
@@ -42,11 +42,11 @@ export function Swipe(props){
     </div>
   )
 }
-export function Tabs(props){
+function TabsFunction(props){
   const tabHeight = useRef()
   const [top, topSet] = useState();
   const [active, activeSet] = useState();
-  const tab = new URLSearchParams(window.location.search).get('tab');
+  const tab = new URLSearchParams(props.location.search).get('tab');
   useEffect(() => {
     topSet(tabHeight.current.offsetHeight)
     const activeTab = tab || props.default || props.children[0].props.title
@@ -70,3 +70,7 @@ export function Tabs(props){
     </Fragment>
   )
 }
+
+const Tabs = withRouter(TabsFunction)
+const Swipe = withRouter(SwipeFunction)
+export {Swipe, Tabs}

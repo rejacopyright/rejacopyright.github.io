@@ -2791,11 +2791,11 @@ div.dt-button-info {
 /************** Horizontal timeline **************/
 .events .event-list {
   &:not(:last-child){
-    padding-bottom: 1rem !important;
+    padding-bottom: 1.5rem !important;
   }
 }
 .left-timeline .events {
-  border-left: 3px solid $light;
+  border-left: 1px solid $lightGrey;
   padding-left: 15px; }
   .left-timeline .events .event-list {
     position: relative; }

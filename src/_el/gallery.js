@@ -1,6 +1,6 @@
 import React, {Fragment, useState, useRef, useEffect} from 'react'
 import {Link} from 'react-router-dom'
-import {Truncate} from '_templates/lib/code'
+import {Truncate} from '_utils/typo'
 import Modal from '_components/modal'
 import Slider from 'react-slick'
 import '_assets/plugins/slick/slick.scss'

@@ -68,9 +68,6 @@ function Gallery(props){
 function Filter(props){
   const [sortBy, sortBySet] = useState('name')
   const [status, statusSet] = useState(1)
-  const cat_select = useMemo(() => category.map(r => {
-    return {value: r.name.toLowerCase(), label: r.name}
-  }), [])
   const sorts = useMemo(() => {
     return [
       {value: 'name', label: 'Nama'},
@@ -109,7 +106,7 @@ function Filter(props){
         {/*Kategori*/}
         <div className="p-1 mt-3">
           <h6 className="mt-0 mb-2 f-700">Kategori</h6>
-          <Select name="select" sm rowClass="" placeholder="Semua Kategori" data={cat_select} label="name" onChange={() => ''} />
+          <Select name="select" sm rowClass="" placeholder="Semua Kategori" data={category} label="name" onChange={() => ''} />
         </div>
       </div>
       <div className="col-12 mt-4">

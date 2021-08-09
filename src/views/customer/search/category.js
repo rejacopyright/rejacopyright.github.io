@@ -26,7 +26,7 @@ function Index(){
                     <img src={require(`${process.env.REACT_APP_IMAGES}/icons/${r.icon}`).default} className="w-100" alt=""/>
                   </div>
                 </div>
-                <p className="m-0 lh-1 text-8 truncate-1 text-dark f-600">{r.name}</p>
+                <p className="m-0 lh-1 text-8 truncate-1 text-dark f-600">{r.label}</p>
               </Link>
             </div>
           ))

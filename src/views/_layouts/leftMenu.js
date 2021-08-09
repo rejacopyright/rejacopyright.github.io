@@ -47,7 +47,7 @@ function activeIt(el, active = true){
     el.closest('li').classList.remove('mm-active')
   }
   const initLink = document.querySelector(`#menu-bar li a`)
-  let pathname = window.location.hash.split('/')
+  let pathname = (window.location.hash || window.location.pathname).split('/')
   let activeLink = document.querySelectorAll(`#menu-bar li a[href="${pathname.join('/')}"]`)[0]
   if (!activeLink) {
     pathname.splice(-1,1)
@@ -91,7 +91,7 @@ function slims(){
   )
 }
 const Index = forwardRef((props, ref) => {
-  let pathname = window.location.hash.split('/')
+  let pathname = (window.location.hash || window.location.pathname).split('/')
   const activeLink = useCallback(() => {
     let activeLink = document.querySelectorAll(`#menu-bar li a[href="${pathname.join('/')}"]`)[0]
     if (!activeLink) {
@@ -133,7 +133,7 @@ const Index = forwardRef((props, ref) => {
           <div className="dropdown-menu profile-dropdown-items shadow-md py-2">
             <Link to="/" className="dropdown-item"> <i data-feather="user" className="icon-dual icon-xs mr-2"></i> <span>Beralih ke User</span> </Link>
             <div className="dropdown-divider"></div>
-            <Link to="/account" className="dropdown-item"> <i data-feather="user" className="icon-dual icon-xs mr-2"></i> <span>My Account</span> </Link>
+            <Link to="/username" className="dropdown-item"> <i data-feather="layout" className="icon-dual icon-xs mr-2"></i> <span>Simple</span> </Link>
             <Link to="#" className="dropdown-item"> <i data-feather="settings" className="icon-dual icon-xs mr-2"></i> <span>Settings</span> </Link>
             <Link to="#" className="dropdown-item"> <i data-feather="help-circle" className="icon-dual icon-xs mr-2"></i> <span>Support</span> </Link>
             <Link to="#" className="dropdown-item"> <i data-feather="lock" className="icon-dual icon-xs mr-2"></i> <span>Lock Screen</span> </Link>
@@ -150,7 +150,6 @@ const Index = forwardRef((props, ref) => {
             <li> <Link to="/vendor/gallery"> <i data-feather="image" /> <span> Galeri </span> </Link> </li>
             <li> <Link to="/vendor/package"> <i data-feather="box" /> <span> Paket </span> </Link> </li>
             <li> <Link to="/vendor/setting"> <i data-feather="settings" /> <span> Pengaturan </span> </Link> </li>
-            <li> <Link to="/vendor/coding"> <i data-feather="code" /> <span> Coding </span> </Link> </li>
             {/* FORMS */}
             <li>
               <Link to="/vendor/form" onClick={menuLink}> <i data-feather="file-text" /> <span> Forms </span> <span className="menu-arrow"></span> </Link>
@@ -211,11 +210,23 @@ const Index = forwardRef((props, ref) => {
                 <li> <Link to="/vendor/ui/load">Load</Link> </li>
                 <li> <Link to="/vendor/ui/loading">Loading Page</Link> </li>
                 <li> <Link to="/vendor/ui/modal">Modal</Link> </li>
+                <li> <Link to="/vendor/ui/pagination">Pagination</Link> </li>
+                <li> <Link to="/vendor/ui/popover">Popover</Link> </li>
                 <li> <Link to="/vendor/ui/progress">Progress</Link> </li>
                 <li> <Link to="/vendor/ui/tab">Tab</Link> </li>
                 <li> <Link to="/vendor/ui/table">Table</Link> </li>
                 <li> <Link to="/vendor/ui/title">Title</Link> </li>
               </ul>
+            </li>
+            {/* UTILS */}
+            <li>
+              <Link to="/vendor/utils" onClick={menuLink}> <i data-feather="settings" /> <span> Utils </span> <span className="menu-arrow"></span> </Link>
+              <ul className="nav-second-level">
+                <li> <Link to="/vendor/utils/typo">Typo</Link> </li>
+              </ul>
+            </li>
+            <li className="pr-4 pb-1 pt-3 position-sticky b-0 bg-white">
+              <Link to="/username" className="btn btn-block btn-xs pointer radius-5 bg-secondary center text-white"><i data-feather="grid" className="mr-2 text-white" />Mode Simple</Link>
             </li>
           </ul>
         </div>

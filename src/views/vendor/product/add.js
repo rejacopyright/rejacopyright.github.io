@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
-import debounce from 'lodash.debounce'
+import {useSize} from '_utils/hooks'
 import Sortable, {SortableHandle} from '_components/sortable'
 import Editor from '_components/pintura'
 import { Decimal, Input, Checkbox, Textarea } from '_components/form'
@@ -18,14 +18,9 @@ function UploadSection(){
   const [activeImg, activeImgSet] = useState(0);
   const [editorSrc, editorSrcSet] = useState();
   const [editorShow, editorShowSet] = useState(false);
-  useEffect(() => {
-    const updateSize = debounce(() => {
-      const c = imgContainer.current
-      c && imgHeightSet(c.clientWidth)
-    }, 300)
-    updateSize()
-    window.addEventListener('resize', updateSize);
-    return () => window.removeEventListener('resize', updateSize);
+  useSize(() => {
+    const c = imgContainer.current
+    c && imgHeightSet(c.clientWidth)
   }, [])
   function changeImage(e){
     const files = input.current.files;
@@ -269,8 +264,13 @@ function TagSection(props){
 }
 function SubmitSection(){
   const history = useHistory()
+  const sticky = useRef()
+  useSize(() => {
+    const stickyBottom = document.querySelector(`#${lay.menu}`).offsetHeight - 10
+    sticky.current && (sticky.current.style.bottom = (stickyBottom > 0 ? stickyBottom : 0) + 'px')
+  }, 300)
   return(
-    <div className="w-100 position-sticky py-2 px-3 bg-white b-0 z-9">
+    <div ref={sticky} className="w-100 position-sticky py-2 px-3 bg-white z-9">
       <div className="row m-0 py-3 px-2 radius-10 shadow-md border border-gray bg-white">
         <div className="col-auto center">
           <Checkbox switch label="Aktifkan" theme="primary" rowClass="mh-0" labelClass="text-nowrap"  id="s3" name="switch" value="1" checked onChange={() => ''} />

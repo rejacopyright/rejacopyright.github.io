@@ -14,9 +14,14 @@ function Index(props){
   const[activeLink, activeLinkSet] = useState(null);
   useEffect(() => {
     const rjMenu = document.querySelector(`#${lay.menu}`).getElementsByClassName(lay.menu);
-    const homeItem = Object.values(rjMenu).find(i => i.href === window.location.origin+'/' );
-    let activeItem = Object.values(rjMenu).find(i => i.href !== window.location.origin+'/' && window.location.href.includes(i.href) ) || homeItem;
-    activeItem = activeItem.href.replace(window.location.origin, '');
+    let activeItem
+    if (window.location.hash) {
+      activeItem = Object.values(rjMenu).find(i => i.hash !== '#/' && (i.hash === window.location.hash || window.location.hash.includes(i.hash)) ) || rjMenu[0];
+      activeItem = activeItem.hash.replace('#', '')
+    }else {
+      activeItem = Object.values(rjMenu).find(i => i.pathname !== '/' && (i.pathname === window.location.pathname || window.location.pathname.includes(i.pathname)) ) || rjMenu[0];
+      activeItem = activeItem.pathname
+    }
     activeLinkSet(activeItem);
     spaceSet(height.current.offsetHeight+10);
   }, [activeLink, props]);

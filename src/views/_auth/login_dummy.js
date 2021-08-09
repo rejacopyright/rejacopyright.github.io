@@ -44,17 +44,22 @@ function Login(props){
                     <div className="">
                       <p className="bold text-12 border-bottom border-light pb-1 mb-2 border-2">What's New</p>
                       <ul className="px-0">
-                        <li onClick={autoLogin} className="text-10 my-2 i text-muted"><code>Gallery Page & Add</code> in vendor <Link to={{pathname: '/vendor/gallery', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
-                        <li onClick={autoLogin} className="text-10 my-2 i text-muted"><code>Product page improvement</code> in vendor <Link to={{pathname: '/vendor/product', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
-                        <li onClick={autoLogin} className="text-10 my-2 i text-muted"><code>Product Add page improvement</code> in vendor <Link to={{pathname: '/vendor/product/add', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
-                        <li onClick={autoLogin} className="text-10 my-2 i text-muted"><code>Form advanced template</code> in vendor <Link to={{pathname: '/vendor/form/advanced', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
-                        <li onClick={autoLogin} className="text-10 my-2 i text-muted">Image Editor <Link to={{pathname: '/vendor/plugins/image', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Simple View</strong> in vendor <Link to={{pathname: '/username', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Modal Improvement</strong> in vendor <Link to={{pathname: '/vendor/ui/modal', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Pagination Page</strong> in vendor <Link to={{pathname: '/vendor/ui/pagination', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Tooltip & Popover Page</strong> in vendor <Link to={{pathname: '/vendor/ui/popover', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Package Page (dev)</strong> in vendor <Link to={{pathname: '/vendor/package', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Gallery Page & Add</strong> in vendor <Link to={{pathname: '/vendor/gallery', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Product page improvement</strong> in vendor <Link to={{pathname: '/vendor/product', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Product Add page improvement</strong> in vendor <Link to={{pathname: '/vendor/product/add', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted"><strong>Form advanced template</strong> in vendor <Link to={{pathname: '/vendor/form/advanced', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
+                        <li onClick={autoLogin} className="text-9 my-2 i text-muted">Image Editor <Link to={{pathname: '/vendor/plugins/image', autoLogin: true}} className="ml-1 small">[Link]</Link></li>
                       </ul>
                     </div>
                   </div>
                   <div className="col px-4 py-0 border-1">
                     <div className="text-center mb-1">
-                      <img src={require("_assets/images/logo.png").default} className="mb-2 p-1 border border-pink radius-100" alt="" height={60} />
+                      <img src={require(`${process.env.REACT_APP_IMAGES}/logo/logo.png`).default} className="mb-2 p-1 border border-pink radius-100" alt="" height={60} />
                       <h3 className="my-0 text-logo text-14">Woless <p className="m-0 f-600 text-7 text-muted lh-2">Best Wedding Organizer</p></h3>
                       <span className="center">
                       </span>
@@ -96,19 +101,19 @@ function Login(props){
                         <div className="row px-4 m-0 flex-nowrap">
                           <div className="col px-1">
                             <div className="btn py-2 btn-block btn-xs btn-white center shadow-md radius-5 text-8">
-                              <img src={require('_dummy/brands/google.png').default} width="15" className="mr-2" alt=""/>
+                              <img src={require(`${process.env.REACT_APP_IMAGES}/brands/google.png`).default} width="15" className="mr-2" alt=""/>
                               Google
                             </div>
                           </div>
                           <div className="col px-1">
                             <div className="btn py-2 btn-block btn-xs btn-white center shadow-md radius-5 text-8">
-                              <img src={require('_dummy/brands/facebook.png').default} width="15" className="mr-2" alt=""/>
+                              <img src={require(`${process.env.REACT_APP_IMAGES}/brands/facebook.png`).default} width="15" className="mr-2" alt=""/>
                               Facebook
                             </div>
                           </div>
                           <div className="col px-1">
                             <div className="btn py-2 btn-block btn-xs btn-white center shadow-md radius-5 text-8">
-                              <img src={require('_dummy/brands/instagram.png').default} width="15" className="mr-2" alt=""/>
+                              <img src={require(`${process.env.REACT_APP_IMAGES}/brands/instagram.png`).default} width="15" className="mr-2" alt=""/>
                               Instagram
                             </div>
                           </div>

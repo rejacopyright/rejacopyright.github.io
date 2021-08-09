@@ -1,7 +1,6 @@
-import React from 'react'
 import Skeleton from 'react-skeleton-loader'
 
-const Loading1 = () => {
+function Loading1(){
   return (
     <div className="row">
       <div className="col-auto pr-0">
@@ -13,7 +12,7 @@ const Loading1 = () => {
     </div>
   )
 }
-const Loading2 = () => {
+function Loading2(){
   return (
     <div className="row center-left">
       <div className="col-auto pr-0">
@@ -25,7 +24,7 @@ const Loading2 = () => {
     </div>
   )
 }
-const Loading3 = () => {
+function Loading3(){
   return (
     <div className="">
       <Skeleton width="50%" height="20px" widthRandomness={0} color="#eee" borderRadius="5px" />
@@ -33,7 +32,7 @@ const Loading3 = () => {
     </div>
   )
 }
-const Loading4 = () => {
+function Loading4(){
   return (
     <div className="row center-left">
       <div className="col-auto pr-0">
@@ -48,7 +47,7 @@ const Loading4 = () => {
     </div>
   )
 }
-const Loading5 = () => {
+function Loading5(){
   return (
     <div className="row center-left">
       <div className="col-12">

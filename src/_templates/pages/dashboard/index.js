@@ -18,7 +18,6 @@ function Dashboard(){
   useEffect(() => {
     document.title = 'Dashboard';
     import('feather-icons').then(f => f.replace());
-    console.log('once');
   }, []);
   useEffect(() => {
     setTimeout(() => loadingSet(false), 200);

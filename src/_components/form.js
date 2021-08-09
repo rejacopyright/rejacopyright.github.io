@@ -48,7 +48,7 @@ function InputIcon(props, ref){
       }
       <div className="position-relative">
         <input ref={ref} type={props.password ? 'password' : 'text'} name={props.name} defaultValue={props.defaultValue} className={`form-control ${props.sm && 'form-control-sm'} ${props.className} radius-5`} placeholder={props.placeholder} onChange={props.onChange} onBlur={props.onBlur} spellCheck={false} autoFocus={props.autoFocus} readOnly={props.readOnly} disabled={props.disabled} style={props.icon ? props.right ? {paddingRight: space} : {paddingLeft: space} : {}} />
-        { props.icon && <div className={`absolute-center-v p-2 text-dark ${props.right && 'r-0'}`} ref={width}>{props.icon}</div> }
+        { props.icon && <div className={`absolute-center-v p-2 text-dark ${props.iconClass} ${props.right && 'r-0'}`} ref={width}>{props.icon}</div> }
       </div>
     </div>
   );

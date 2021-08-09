@@ -21,7 +21,6 @@ const reducer = (state = init, action) => {
       let expires = moment().add(2, 'h').toDate()
       Cookies.set('uri', process.env.REACT_APP_URI, expires)
       Cookies.set('img', process.env.REACT_APP_IMG, expires)
-      Cookies.set('token', action.api_token, expires)
       Cookies.set('user', action.user, expires)
       Cookies.set('auth', true, expires)
       return {...state, auth: true}

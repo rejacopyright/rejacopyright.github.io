@@ -1,7 +1,7 @@
 import React from 'react'
 import Name from 'random-words'
 import {Follow as Vendor} from '_el/user'
-import {Capitalize, RandomNumber} from '_components/coding'
+import {Capitalize, RandomNumber} from '_utils/typo'
 // const api = require('js-cookie').getJSON()
 
 function Index(){

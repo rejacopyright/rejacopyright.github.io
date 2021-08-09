@@ -6,11 +6,45 @@ import Rating from 'react-rating'
 import lay from '_config/layout'
 import {Inputicon, Checkbox} from '_components/form'
 import Modal from '_components/modal'
+import { Scrollbars } from 'react-custom-scrollbars'
 function ViewPackage(props){
   return(
     <div className="row m-0">
+      <div className="absolute t-0 r-0 m-2 z-1" data-dismiss="modal">
+        <div className="same-25 bg-light pointer center radius-50"><i className="uil uil-times text-12" /></div>
+      </div>
       <div className="col-12">
-        Package View
+        <h6 className="header-title border-bottom border-2 pb-2 mt-0">
+          <p className="m-0">List Produk</p>
+          <p className="m-0 text-9 text-truncate">Paket Lorem Ipsum Dolor Sit Amet Ipsum</p>
+        </h6>
+      </div>
+      <div className="col-12">
+        <Scrollbars autoHeight autoHeightMax="75vh" autoHide autoHideDuration={10} >
+          {
+            Array(15).fill().map((r, key) => (
+              <div className="row mx-0 border-bottom py-2 bg-white radius-5 position-relative" key={key}>
+                <div className={`col-auto wpx-50 mr-2 bg-img-c radius-left-5`} style={{ backgroundImage: `url(${require(`${process.env.REACT_APP_IMAGES}/products/${key+1}.jpg`).default})` }}>
+                </div>
+                <div className="col px-1 py-2">
+                  <h6 className="m-0 text-9 truncate-1 text-muted f-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, unde.</h6>
+                  <h6 className="mt-2 mb-0 text-11 lh-0 f-700"> Rp. 900.000 <div className="badge badge-soft-primary text-7 f-700 py-0 mr-1"><div className="ppx-2">10%</div></div> </h6>
+                </div>
+              </div>
+            ))
+          }
+        </Scrollbars>
+      </div>
+      <div className="col-12 bg-white pt-2">
+        <div className="bg-primary p-3 radius-10 oh text-white">
+          <p className="m-0 bold text-9">Total Harga</p>
+          <div className="row mx-n1">
+            <div className="col-auto px-1">
+              <p className="m-0 bold text-14 center-left">Rp. 92.000.000</p>
+            </div>
+            <div className="col-auto px-1"><span className="badge badge-sm badge-soft-primary ml-1 bold text-8">10% OFF</span></div>
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -19,25 +53,27 @@ function Package(props){
   return(
     <div className="card border hover-sm my-2">
       <div className="card-body p-3">
-        <div className="badge badge-soft-info float-right">10% OFF</div>
-        <p className="text-dark mb-1 bold"> Package Name </p>
-        <div className="float-right mt-2">
-          <p className="m-0 text-center text-10 bold lh-1">8</p>
-          <p className="m-0 text-center text-7">Produk</p>
-        </div>
-        <h6 className="m-0"> <span className="text-dark"> Rp. 92.000.000 </span> </h6>
-        <div className="m-0">
-          <div className="f-600 text-muted text-10">
-            <Rating
-              initialRating={props.rating || 3}
-              fullSymbol={<img src={require(`${process.env.REACT_APP_IMAGES}/icons/star.png`).default} width="10" alt=""/>}
-              emptySymbol={<img src={require(`${process.env.REACT_APP_IMAGES}/icons/star-o.png`).default} width="10" alt=""/>}
-              readonly
-              />
-            <span className="text-8 text-dark"> (92)</span>
+        <div className="pointer" data-toggle="modal" data-target="#view-package">
+          <div className="badge badge-soft-info float-right">10% OFF</div>
+          <p className="text-dark mb-1 bold"> Package Name </p>
+          <div className="float-right mt-2">
+            <p className="m-0 text-center text-10 bold lh-1">8</p>
+            <p className="m-0 text-center text-7">Produk</p>
           </div>
+          <h6 className="m-0"> <span className="text-dark"> Rp. 92.000.000 </span> </h6>
+          <div className="m-0">
+            <div className="f-600 text-muted text-10">
+              <Rating
+                initialRating={props.rating || 3}
+                fullSymbol={<img src={require(`${process.env.REACT_APP_IMAGES}/icons/star.png`).default} width="10" alt=""/>}
+                emptySymbol={<img src={require(`${process.env.REACT_APP_IMAGES}/icons/star-o.png`).default} width="10" alt=""/>}
+                readonly
+                />
+              <span className="text-8 text-dark"> (92)</span>
+            </div>
+          </div>
+          <p className="text-muted my-2 lh-12 truncate-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nemo minima, aspernatur molestias corrupti voluptatibus culpa esse velit minus temporibus. </p>
         </div>
-        <p className="text-muted my-2 lh-12 truncate-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nemo minima, aspernatur molestias corrupti voluptatibus culpa esse velit minus temporibus. </p>
         <div className="d-flex center-right">
           <div className="row mx-n1 center-left mr-auto">
             <div className="col-auto px-1 ml-md-0 lh-5 text-8 f-700 text-muted"><i className="uil uil-thumbs-up mr-1" />12</div>
@@ -54,7 +90,7 @@ function Package(props){
               <i className="uil uil-ellipsis-h text-dark"></i>
             </div>
             <div className="dropdown-menu dropdown-menu-top t-unset radius-5 oh shadow z-1">
-              <Link to="/vendor/product/edit/123" className="dropdown-item text-9"><i className="uil uil-edit-alt mr-1"></i>Edit</Link>
+              <Link to="/vendor/package/edit/123" className="dropdown-item text-9"><i className="uil uil-edit-alt mr-1"></i>Edit</Link>
               <Link to="#" className="dropdown-item text-9"><i className="uil uil-share-alt mr-1"></i>Share</Link>
               <div className="dropdown-divider"></div>
               <Link to="#" className="dropdown-item text-9 text-danger"><i className="uil uil-archive mr-1"></i>Arsipkan</Link>
@@ -170,7 +206,7 @@ function Index(){
             </div>
           </div>
           <div className="col-auto center desktop">
-            <Link to={`/vendor/gallery/add`} className="btn btn-md radius-50 width-md btn-soft-primary bold border border-primary pointer">Posting Galeri</Link>
+            <Link to={`/vendor/package/add`} className="btn btn-md radius-50 width-md btn-soft-primary bold border border-primary pointer">Tambah Paket</Link>
           </div>
         </div>
       </div>

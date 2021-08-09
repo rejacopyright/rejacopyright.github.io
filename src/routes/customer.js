@@ -13,6 +13,8 @@ const routes = [
   { path: "/invite", exact: false, component: lazy(() => import('views/customer/profile/invite')) },
   { path: "/account", exact: true, component: lazy(() => import('_templates/pages/account')) },
   { path: "/setting", exact: true, component: lazy(() => import('_templates/pages/setting/index')) },
+  // User
+  { path: "/:username", exact: false, component: lazy(() => import('views/profile')) },
   // 404
   { path: "*", exact: true, component: lazy(() => import('views/_layouts/pageNotFound')) },
 ];

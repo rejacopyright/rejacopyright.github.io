@@ -51,6 +51,8 @@ xlsx
 
 // ------------- // FOR GH PAGES // ------------- //
 
-Logn Replace
+package.json replace
+Login Replace
 Token Redux Ganti
 BrowserRouter => HashRouter
+.env DEL PORT

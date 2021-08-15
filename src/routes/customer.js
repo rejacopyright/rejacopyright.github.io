@@ -2,6 +2,7 @@ import {lazy} from 'react'
 
 const routes = [
   { path: "/", exact: true, component: lazy(() => import('views/customer/home/index')) },
+  { path: "/product", exact: true, component: lazy(() => import('views/customer/home/product')) },
   { path: "/search", exact: false, component: lazy(() => import('views/customer/search/search')) },
   { path: "/category", exact: false, component: lazy(() => import('views/customer/search/category')) },
   { path: "/product/:vendorId/:productId", exact: false, component: lazy(() => import('views/customer/product/detail')) },

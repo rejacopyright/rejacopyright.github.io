@@ -11,7 +11,7 @@ import customer from 'routes/customer'
 import vendor from 'routes/vendor'
 
 function Loading(){
-  return <div className="overlay center"><ClassicSpinner color="#5369f8" /></div>
+  return <div className="overlay center"><ClassicSpinner color="#555" /></div>
 }
 function Index(props){
   const cp = useRef()

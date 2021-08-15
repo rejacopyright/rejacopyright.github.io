@@ -30,7 +30,7 @@ function Dashboard(){
   }, [ total, hadir, absen ]);
   return (
     <div className="container-fluid">
-      { loading && <div className="overlay center"><ClassicSpinner color="#5369f8" loading={true} /></div> }
+      { loading && <div className="overlay center"><ClassicSpinner color="#555" loading={true} /></div> }
       <div className="row mt-3">
         <User divClass="col-xl-2 col-md-3" title="Total Karyawan" value={total} theme="primary" icon="users" />
         <User divClass="col-xl-2 col-md-3" title="Karyawan Hadir" value={hadir} theme="success" icon="user-check" />

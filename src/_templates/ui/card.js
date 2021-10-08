@@ -192,7 +192,7 @@ function Profile2(){
     <div className="profile-widget bg-white radius-10 shadow oh mb-3">
       <div className="hpx-100 w-100 mx-auto oh bg-img" style={{ backgroundImage: `url(${require(`${process.env.REACT_APP_IMAGES}/products/6.jpg`).default})` }}> </div>
       <div className="dropdown card-action float-right">
-        <Link to="#" className="dropdown-toggle arrow-none" data-toggle="dropdown" aria-expanded="false"> <i className="uil uil-ellipsis-v font-size-16 text-white"></i> </Link>
+        <Link to="#" className="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i className="uil uil-ellipsis-v font-size-16 text-white"></i> </Link>
         <div className="dropdown-menu dropdown-menu-right radius-5 text-9 oh">
           <Link to="#" className="dropdown-item"><i className="uil uil-edit-alt mr-2"></i>Edit</Link>
           <Link to="#" className="dropdown-item"><i className="uil uil-refresh mr-2"></i>Refresh</Link>
@@ -242,7 +242,7 @@ function Profile3(){
           </div>
         </div>
         <div className="dropdown card-action float-right">
-          <Link to="#" className="dropdown-toggle arrow-none" data-toggle="dropdown" aria-expanded="false"> <i className="uil uil-ellipsis-v text-muted"></i> </Link>
+          <Link to="#" className="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false"> <i className="uil uil-ellipsis-v text-muted"></i> </Link>
           <div className="dropdown-menu dropdown-menu-right radius-5 text-9 oh">
             <Link to="#" className="dropdown-item"><i className="uil uil-edit-alt mr-2"></i>Edit</Link>
             <Link to="#" className="dropdown-item"><i className="uil uil-refresh mr-2"></i>Refresh</Link>

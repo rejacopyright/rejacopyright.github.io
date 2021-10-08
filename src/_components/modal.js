@@ -9,7 +9,7 @@ export default function Modal(props){
             !(props.headerDisabled) &&
             <div className="modal-header p-2 bg-light center-left">
               <div className="text-9 f-700 text-center col">{props.title}</div>
-              <div className="pointer ml-auto p-0" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><i className="uil uil-times text-10 lh-1 text-muted" /></span> </div>
+              <div className="pointer ml-auto p-0" data-bs-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><i className="uil uil-times text-10 lh-1 text-muted" /></span> </div>
             </div>
           }
           <div className={`modal-body ${props.bodyClass}`}>

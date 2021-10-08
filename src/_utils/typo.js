@@ -18,6 +18,24 @@ function RandomNumber(min, max){
 function ArrayDummi(count){
   return Array(count).fill().map((v, i) => i+1)
 }
+function getParam(){
+  let search = window.location.search
+  search = search.charAt(0) === '?' ? search.substring(1) : search
+  if (search) {
+    let parsed = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+    parsed = Object.entries(parsed).map(r => r[1] === 'true' ? [r[0], true] : r[1] === 'false' ? [r[0], false] : r[1] === 'undefined' ? [r[0], undefined] : r[1] === 'null' ? [r[0], null] : r)
+    parsed = Object.fromEntries(parsed)
+    return parsed
+  }else {
+    return {}
+  }
+}
+function setParam(obj){
+  Object.entries(obj).map(r => {
+    let param = new URLSearchParams(window.location.search)
+    return param.set(r[0], r[1])
+  })
+}
 function Truncate(max, str) {
   const string = str.replace(/  +/g, ' ');
   const arr = string.toString().split(' ');
@@ -54,6 +72,8 @@ function More(props){
    Digit,
    RandomNumber,
    ArrayDummi,
+   getParam,
+   setParam,
    Truncate,
    More,
  }

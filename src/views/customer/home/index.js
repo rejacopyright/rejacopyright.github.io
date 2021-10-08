@@ -264,10 +264,6 @@ function Sidebar(props){
   )
 }
 function Comment(props){
-  const [img, imgSet] = useState([])
-  useEffect(() => {
-    imgSet(props.img || [])
-  }, [props.star, props.img])
   return(
     <Fragment>
       <div className="relative border-top bg-white py-2">

@@ -43,7 +43,7 @@ export function Images(props){
       </div>
       {
         props.close &&
-        <div className="absolute t-0 r-0 same-25 white-25 radius-50 center pointer m-1" data-dismiss="modal"><i className="uil uil-times"/></div>
+        <div className="absolute t-0 r-0 same-25 white-25 radius-50 center pointer m-1" data-bs-dismiss="modal"><i className="uil uil-times"/></div>
       }
     </div>
   )
@@ -107,7 +107,7 @@ export function List(props) {
             <p className="f-500 m-0 text-9 lh-12 text-muted">rejajamil</p>
           </Link>
           <div className="ml-auto">
-            <div className="same-30 radius-50 center pointer mr-1" data-toggle="modal" data-target="#galleryOpt"><i className="uil uil-ellipsis-v"/></div>
+            <div className="same-30 radius-50 center pointer mr-1" data-bs-toggle="modal" data-bs-target="#galleryOpt"><i className="uil uil-ellipsis-v"/></div>
             <Modal id="galleryOpt" headerDisabled modalClass="px-5" contentClass="radius-10">
               <p className="text-center text-10 bold text-dark my-0 py-1"> Share </p>
               <p className="text-center text-10 bold text-dark my-0 py-1"> Unfollow </p>
@@ -132,7 +132,7 @@ export function List(props) {
         </div>
         {
           props.close &&
-          <div className="absolute t-0 r-0 same-25 white-25 radius-50 center pointer m-1" data-dismiss="modal"><i className="uil uil-times"/></div>
+          <div className="absolute t-0 r-0 same-25 white-25 radius-50 center pointer m-1" data-bs-dismiss="modal"><i className="uil uil-times"/></div>
         }
       </div>
       <div className="center-left">
@@ -183,7 +183,7 @@ export function Grid(props){
   }, []);
   return(
     <div className={`col-4 center p-0 ppx-1 oh`} ref={refImg}>
-      <div className="w-100 bg-img" onClick={props.onClick} data-toggle="modal" data-target={`#${props.target}`} data-backdrop={props.backdrop && 'static'} style={{backgroundImage: `url(${props.img || require(`${process.env.REACT_APP_IMAGES}/products/1.jpg`).default})`, height: imgHeight }}>
+      <div className="w-100 bg-img" onClick={props.onClick} data-bs-toggle="modal" data-bs-target={`#${props.target}`} data-bs-backdrop={props.backdrop && 'static'} style={{backgroundImage: `url(${props.img || require(`${process.env.REACT_APP_IMAGES}/products/1.jpg`).default})`, height: imgHeight }}>
       </div>
     </div>
   )

@@ -53,7 +53,7 @@ class Setting extends React.Component {
         <div className="modal-footer pb-0 px-0 mt-3">
           <span className="badge badge-pill badge-soft-primary border border-primary f-800 m-0">CCTV 1</span>
           <div className="btn-group ml-auto">
-            <button type="button" className="btn btn-light" data-dismiss="modal"><i className="uil uil-capture text-dark" /></button>
+            <button type="button" className="btn btn-light" data-bs-dismiss="modal"><i className="uil uil-capture text-dark" /></button>
             <button type="button" className="btn btn-light"><i className="uil uil-sliders-v-alt text-warning" /></button>
             <button type="button" className="btn btn-light"><i className="uil uil-times-circle text-danger" /></button>
           </div>
@@ -111,7 +111,7 @@ class Setting extends React.Component {
                         <div className="p-2 d-flex align-items-center">
                           <span className="badge badge-pill badge-soft-primary border border-primary f-800 m-0">CCTV 1</span>
                           <div className="btn-group ml-auto">
-                            <button type="button" className="btn btn-sm btn-light" data-toggle="modal" data-target="#zoomModal" onClick={this.zoom.bind(this)}><i className="uil uil-capture text-dark" /></button>
+                            <button type="button" className="btn btn-sm btn-light" data-bs-toggle="modal" data-bs-target="#zoomModal" onClick={this.zoom.bind(this)}><i className="uil uil-capture text-dark" /></button>
                             <button type="button" className="btn btn-sm btn-light" onClick={this.slideToggle.bind(this)}><i className="uil uil-sliders-v-alt text-warning" /></button>
                             <button type="button" className="btn btn-sm btn-light"><i className="uil uil-times-circle text-danger" /></button>
                           </div>

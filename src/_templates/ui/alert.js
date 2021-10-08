@@ -1,4 +1,3 @@
-import React from 'react'
 import Alert from '_components/alert'
 import Notif from '_components/notif'
 

@@ -1,5 +1,3 @@
-import React from 'react'
-
 function Table1(){
   return(
     <div className="table-responsive">
@@ -31,11 +29,11 @@ function Table1(){
                 <td className="pointer text-primary text-8 text-nowrap f-700">Rp. 100.000</td>
                 <td className="text-right">
                   <div className="btn-group dropleft">
-                    <span className="same-20 btn-soft-primary radius-50 center ml-auto pointer dropdown-toggle mr-2" data-toggle="dropdown" aria-expanded="false"><i className="uil uil-layer-group" /></span>
+                    <span className="same-20 btn-soft-primary radius-50 center ml-auto pointer dropdown-toggle mr-2" data-bs-toggle="dropdown" aria-expanded="false"><i className="uil uil-layer-group" /></span>
                     <div className="dropdown-menu dropdown-primary shadow-sm">
                       <span className="dropdown-item"><i className="uil uil-eye mr-2" />View</span>
                       <span className="dropdown-item"><i className="uil uil-edit-alt mr-2" />Edit</span>
-                      <span className="dropdown-item" data-toggle="modal" data-target="#deleteModal"><i className="uil uil-trash mr-2" />Delete</span>
+                      <span className="dropdown-item"><i className="uil uil-trash mr-2" />Delete</span>
                     </div>
                   </div>
                 </td>

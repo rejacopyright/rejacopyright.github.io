@@ -1,36 +1,35 @@
 import {useEffect, useRef} from 'react'
-import $ from 'jquery'
+import * as bootstrap from 'bootstrap/dist/js/bootstrap.min.js'
 
 function Tooltip(props){
-  const tooltip = useRef()
+  const el = useRef()
   useEffect(() => {
-    $(tooltip.current).tooltip()
+    const t = new bootstrap.Tooltip(el.current)
+    return () => t.dispose()
   }, [])
   return(
-    <span ref={tooltip} className={props.className}
-      data-placement={
+    <span ref={el} title={props.title || 'title'} className={props.className} role="tooltip"
+      data-bs-placement={
         (props.top && 'top') || (props.bottom && 'bottom') || (props.left && 'left') || (props.right && 'right') || 'top'
-      }
-      data-original-title={props.title || 'title'} >
+      }>
       {props.children}
     </span>
   )
 }
 
 function Popover(props){
-  const popover = useRef()
+  const el = useRef()
   useEffect(() => {
-    $(popover.current).popover()
+    const p = new bootstrap.Popover(el.current)
+    return () => p.dispose()
   }, [])
   return(
-    <span ref={popover} className={props.className}
-      data-trigger={(props.hover && 'hover') || (props.click && 'click') || 'focus'}
+    <span ref={el} className={props.className} title={props.title} data-bs-content={props.content || 'content'}
+      data-bs-trigger={(props.hover && 'hover') || (props.click && 'click') || 'focus'}
       tabIndex="0"
-      data-placement={
+      data-bs-placement={
         (props.top && 'top') || (props.bottom && 'bottom') || (props.left && 'left') || (props.right && 'right') || 'top'
-      }
-      data-content={props.content || 'content'}
-      data-original-title={props.title} >
+      }>
       {props.children}
     </span>
   )

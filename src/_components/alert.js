@@ -7,7 +7,7 @@ export default function Alert(props){
       <div className="px-2 text-9">
         {props.children}
       </div>
-      { props.close && <div className="ml-auto pointer" data-dismiss="alert" onClick={props.onClose}> <i className="uil uil-times text-9" /> </div> }
+      { props.close && <div className="ml-auto pointer" data-bs-dismiss="alert" onClick={props.onClose}> <i className="uil uil-times text-9" /> </div> }
     </div>
   )
 }

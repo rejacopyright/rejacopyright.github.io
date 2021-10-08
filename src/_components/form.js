@@ -28,15 +28,15 @@ function InputFunc(props, ref){
         }
       </div>
     </div>
-  );
+  )
 }
 // Search
 function InputIcon(props, ref){
-  const width = useRef();
-  const [space, spaceSet] = useState(0);
+  const width = useRef()
+  const [space, spaceSet] = useState(0)
   useEffect(() => {
-    spaceSet(width.current.offsetWidth);
-  }, []);
+    spaceSet(width.current.offsetWidth)
+  }, [])
   return (
     <div className={props.rowClass}>
       {
@@ -51,7 +51,7 @@ function InputIcon(props, ref){
         { props.icon && <div className={`absolute-center-v p-2 text-dark ${props.iconClass} ${props.right && 'r-0'}`} ref={width}>{props.icon}</div> }
       </div>
     </div>
-  );
+  )
 }
 // Textarea
 function TextareaFunc(props, ref){
@@ -81,29 +81,30 @@ function RadioFunc(props, ref){
 function CheckboxFunc(props, ref){
   return (
     <div className={`center-left custom-control ${props.switch ? 'custom-switch' : 'custom-checkbox'} ${props.rowClass} ${props.theme && `checkbox-${props.theme}`} ${props.circle && `checkbox-circle`}`}>
-      <input type="checkbox" ref={ref} id={props.id} name={props.name} value={props.value} defaultChecked={props.checked || false} className="custom-control-input" onChange={props.onChange} disabled={props.disabled} />
+      <input type="checkbox" ref={ref} id={props.id} name={props.name} value={props.value} checked={props.checked} className="custom-control-input" onChange={props.onChange} disabled={props.disabled} />
       <label className={`lh-1 custom-control-label ${props.small && 'small f-600'} ${props.labelClass}`} htmlFor={props.id}> {props.label} </label>
     </div>
   )
 }
 // Decimal
 function DecimalFunc(props, ref) {
-  const [value, valueSet] = useState(props.min && props.min >= props.value ? props.min : props.max && props.max <= props.value ? props.max : props.value);
-  const [error] = useState(props.value ? '' : props.error);
+  const [value, valueSet] = useState(props.min && props.min >= props.value ? props.min : props.max && props.max <= props.value ? props.max : props.value)
+  const [error] = useState(props.value ? '' : props.error)
   useEffect(() => {
-    let val = parseFloat(props.value || 0);
+    let val = parseFloat(props.value || 0)
     if (parseFloat(props.min) && parseFloat(props.min) >= val) {
-      val = parseFloat(props.min);
+      val = parseFloat(props.min)
     }else if (parseFloat(props.max) && parseFloat(props.max) <= val) {
-      val = parseFloat(props.max);
+      val = parseFloat(props.max)
     }else {
-      val = parseFloat(props.value);
+      val = parseFloat(props.value)
     }
-    valueSet(val);
-    return val;
-  }, [props.value, props.min, props.max, props.error]);
+    valueSet(val)
+    return val
+  }, [props.value, props.min, props.max, props.error])
   function onChange(e){
-    props.onChange && props.onChange(e.floatValue || 0);
+    valueSet(e.floatValue)
+    props.onChange && props.onChange(e.floatValue || 0)
   }
   return (
     <div className={props.rowClass}>
@@ -130,20 +131,20 @@ function DecimalFunc(props, ref) {
           decimalScale={props.decimal || false}
           allowEmptyFormatting={true}
           isAllowed={ val => {
-            const {floatValue, value} = val;
+            const {floatValue, value} = val
             if (props.min && props.max) {
-              return (floatValue >= props.min && floatValue <= props.max) || floatValue === undefined;
+              return (floatValue >= props.min && floatValue <= props.max) || floatValue === undefined
             }
             if (props.min && parseInt(props.min) !== 0) {
-              return floatValue >= props.min;
+              return floatValue >= props.min
             }
             if (props.max) {
-              return floatValue <= props.max || floatValue === undefined;
+              return floatValue <= props.max || floatValue === undefined
             }
             if (parseInt(value[0]) === 0 && !isNaN(parseInt(value[1]))) {
               return false
             }
-            return true;
+            return true
           }}
           onValueChange={onChange}
           value={parseFloat(value)}
@@ -165,12 +166,12 @@ function DecimalFunc(props, ref) {
   )
 }
 
-export const Input = forwardRef(InputFunc);
-export const Inputicon = forwardRef(InputIcon);
-export const Textarea = forwardRef(TextareaFunc);
-export const Radio = forwardRef(RadioFunc);
-export const Checkbox = forwardRef(CheckboxFunc);
-export const Decimal = forwardRef(DecimalFunc);
+export const Input = forwardRef(InputFunc)
+export const Inputicon = forwardRef(InputIcon)
+export const Textarea = forwardRef(TextareaFunc)
+export const Radio = forwardRef(RadioFunc)
+export const Checkbox = forwardRef(CheckboxFunc)
+export const Decimal = forwardRef(DecimalFunc)
 // PropTypes
 Input.propTypes = {
   name: PropTypes.any.isRequired,

@@ -1,7 +1,8 @@
 import {useEffect} from 'react'
 import debounce from 'lodash.debounce'
 function useDebounce(func, timeout){
-  return debounce(func, timeout)
+  const save = debounce(func, timeout)
+  return save(func)
 }
 function useSize(func, timeout){
   useEffect(() => {

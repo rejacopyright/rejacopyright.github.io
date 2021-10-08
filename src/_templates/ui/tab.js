@@ -6,19 +6,19 @@ function Default(){
     <Fragment>
       <ul className="nav nav-tabs">
         <li className="nav-item">
-          <a href="#default_1" data-toggle="tab" aria-expanded="false" className="nav-link p-2">
+          <a href="#default_1" data-bs-toggle="tab" aria-expanded="false" className="nav-link p-2">
             <span className="d-block d-sm-none"><i className="uil uil-home-alt"></i></span>
             <span className="d-none d-sm-block">Default 1</span>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#default_2" data-toggle="tab" aria-expanded="true" className="nav-link p-2 active">
+          <a href="#default_2" data-bs-toggle="tab" aria-expanded="true" className="nav-link p-2 active">
             <span className="d-block d-sm-none"><i className="uil uil-user"></i></span>
             <span className="d-none d-sm-block">Default 2</span>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#default_3" data-toggle="tab" aria-expanded="false" className="nav-link p-2">
+          <a href="#default_3" data-bs-toggle="tab" aria-expanded="false" className="nav-link p-2">
             <span className="d-block d-sm-none"><i className="uil uil-envelope"></i></span>
             <span className="d-none d-sm-block">Default 3</span>
           </a>
@@ -43,19 +43,19 @@ function Justify(){
     <Fragment>
       <ul className="nav nav-tabs nav-justified">
         <li className="nav-item">
-          <a href="#justify_1" data-toggle="tab" aria-expanded="false" className="nav-link p-2">
+          <a href="#justify_1" data-bs-toggle="tab" aria-expanded="false" className="nav-link p-2">
             <span className="d-block d-sm-none"><i className="uil uil-home-alt"></i></span>
             <span className="d-none d-sm-block">Justify 1</span>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#justify_2" data-toggle="tab" aria-expanded="true" className="nav-link p-2 active">
+          <a href="#justify_2" data-bs-toggle="tab" aria-expanded="true" className="nav-link p-2 active">
             <span className="d-block d-sm-none"><i className="uil uil-user"></i></span>
             <span className="d-none d-sm-block">Justify 2</span>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#justify_3" data-toggle="tab" aria-expanded="false" className="nav-link p-2">
+          <a href="#justify_3" data-bs-toggle="tab" aria-expanded="false" className="nav-link p-2">
             <span className="d-block d-sm-none"><i className="uil uil-envelope"></i></span>
             <span className="d-none d-sm-block">Justify 3</span>
           </a>
@@ -80,19 +80,19 @@ function Pill(){
     <Fragment>
       <ul className="nav nav-pills navtab-bg nav-justified">
         <li className="nav-item">
-          <a href="#pill_1" data-toggle="tab" aria-expanded="false" className="nav-link p-0">
+          <a href="#pill_1" data-bs-toggle="tab" aria-expanded="false" className="nav-link p-0">
             <span className="d-block d-sm-none"><i className="uil uil-home-alt"></i></span>
             <span className="d-none d-sm-block">Pill 1</span>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#pill_2" data-toggle="tab" aria-expanded="true" className="nav-link p-0 active">
+          <a href="#pill_2" data-bs-toggle="tab" aria-expanded="true" className="nav-link p-0 active">
             <span className="d-block d-sm-none"><i className="uil uil-user"></i></span>
             <span className="d-none d-sm-block">Pill 2</span>
           </a>
         </li>
         <li className="nav-item">
-          <a href="#pill_3" data-toggle="tab" aria-expanded="false" className="nav-link p-0">
+          <a href="#pill_3" data-bs-toggle="tab" aria-expanded="false" className="nav-link p-0">
             <span className="d-block d-sm-none"><i className="uil uil-envelope"></i></span>
             <span className="d-none d-sm-block">Pill 3</span>
           </a>

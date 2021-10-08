@@ -227,6 +227,8 @@ li{line-height: 1.2;}
 .vh-30{height: 30vh !important;}
 .vh-40{height: 40vh !important;}
 .vh-50{height: 50vh !important;}
+.vh-60{height: 60vh !important;}
+.vh-70{height: 70vh !important;}
 .vh-75{height: 75vh !important;}
 .vh-80{height: 80vh !important;}
 .vh-90{height: 90vh !important;}
@@ -421,6 +423,7 @@ li{line-height: 1.2;}
 .text-20{ font-size: 20pt !important; }
 .text-22{ font-size: 22pt !important; }
 .wrap{ white-space: normal !important; }
+.nowrap{ white-space: nowrap !important; }
 
 // PADDING
 .ppx-1{ padding: 1px !important; }
@@ -618,6 +621,18 @@ li{line-height: 1.2;}
 .bg-soft-dark{ background-color: $softDark !important; }
 .bg-soft-teal{ background-color: $softTeal !important; }
 .bg-soft-indigo{ background-color: $softIndigo !important; }
+.bg-hover-smoke:hover{ background-color: $smoke !important; }
+.bg-hover-primary:hover{ background-color: $softPrimary !important; }
+.bg-hover-secondary:hover{ background-color: $softSecondary !important; }
+.bg-hover-success:hover{ background-color: $softSuccess !important; }
+.bg-hover-info:hover{ background-color: $softInfo !important; }
+.bg-hover-warning:hover{ background-color: $softWarning !important; }
+.bg-hover-danger:hover{ background-color: $softDanger !important; }
+.bg-hover-light:hover{ background-color: $light !important; }
+.bg-hover-gray:hover{ background-color: $softGray !important; }
+.bg-hover-dark:hover{ background-color: $softDark !important; }
+.bg-hover-teal:hover{ background-color: $softTeal !important; }
+.bg-hover-indigo:hover{ background-color: $softIndigo !important; }
 .bg-img{
   background-repeat: no-repeat !important;
   background-size: cover !important;

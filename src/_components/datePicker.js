@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { DatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers'
 import moment from 'moment'
-import MomentUtils from '@date-io/moment';
+import utils from '@date-io/moment';
 
 function Index(props){
   const [selectedDate, selectedDateSet] = useState(props.defaultValue || new Date());
@@ -11,7 +11,7 @@ function Index(props){
     props.onChange(e, props.name || false);
   }
   return (
-    <MuiPickersUtilsProvider utils={MomentUtils}>
+    <MuiPickersUtilsProvider utils={utils}>
       <div className="" onClick={() => isOpenSet(true)}>
         {
           props.children ||

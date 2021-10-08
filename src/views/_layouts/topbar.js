@@ -45,7 +45,7 @@ function TopBar(props){
           </ul>
           <ul className="navbar-nav ml-auto list-unstyled topnav-menu center mb-0">
             <li className="dropdown notification-list">
-              <Link to="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
+              <Link to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
                 <i data-feather="message-circle" />
                 <div className="absolute t-0 r-0"><div className="center bg-danger text-white bold ppx-3 text-7 lh-12 radius-20 mt-2">99+</div></div>
               </Link>
@@ -80,7 +80,7 @@ function TopBar(props){
               </div>
             </li>
             <li className="dropdown notification-list">
-              <Link to="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
+              <Link to="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
                 <i data-feather="bell" />
                 <span className="noti-icon-badge mt-2" />
               </Link>
@@ -146,7 +146,7 @@ function TopBar(props){
               <Link to="/settings" className="nav-link right-bar-toggle"> <i data-feather="settings" /> </Link>
             </li>
             <li className="dropdown notification-list align-self-center profile-dropdown">
-              <Link to="#" className="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
+              <Link to="#" className="nav-link dropdown-toggle nav-user mr-0" data-bs-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
                 <div className="media user-profile py-0 pl-3 center-left">
                   <img src={require(`${process.env.REACT_APP_IMAGES}/avatar/c-2.png`).default} alt="user" className="same-25" />
                   <div className="media-body text-left">

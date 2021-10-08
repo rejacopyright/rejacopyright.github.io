@@ -16,6 +16,7 @@ function Index(){
             <span className="badge badge-warning mr-2">Warning</span>
             <span className="badge badge-info mr-2">Info</span>
             <span className="badge badge-light">Light</span>
+            <span className="badge badge-muted">Muted</span>
           </div>
         </div>
         <div className="col-xl-4">

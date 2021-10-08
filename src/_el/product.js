@@ -74,7 +74,7 @@ export function Review(props){
                 {
                   img.map((r, key) => (
                     <div className="col-auto ppx-2" key={key}>
-                      <div className="same-35 radius-5 bg-img" style={{backgroundImage: `url(${r})`}} data-toggle="modal" data-target={`#${props.id || 'review-image'}`} />
+                      <div className="same-35 radius-5 bg-img" style={{backgroundImage: `url(${r})`}} data-bs-toggle="modal" data-bs-target={`#${props.id || 'review-image'}`} />
                     </div>
                   ))
                 }
@@ -111,7 +111,7 @@ function Title(){
         <h6 className="f-700 m-0 text-12 lh-2 text-dark">Rp. 1.500.000</h6>
       </div>
       <div className="col-auto pl-0 pr-2">
-        <div className="same-30 radius-50 bg-light center pointer" data-toggle="modal" data-target="#galleryOpt"><i className="uil uil-ellipsis-v"/></div>
+        <div className="same-30 radius-50 bg-light center pointer" data-bs-toggle="modal" data-bs-target="#galleryOpt"><i className="uil uil-ellipsis-v"/></div>
         <Modal id="galleryOpt" headerDisabled modalClass="px-5" contentClass="radius-10">
           <p className="text-center text-10 bold text-dark my-0 py-2"> Share </p>
           <p className="text-center text-10 bold text-dark my-0 py-2"> Unfollow </p>
@@ -152,7 +152,7 @@ export function Detail(props) {
             <p className="f-500 m-0 lh-12 text-muted text-8">rejajamil</p>
           </Link>
           <div className="ml-auto">
-            <div className="same-30 radius-50 center pointer mr-1" data-toggle="modal" data-target="#galleryOpt"><i className="uil uil-ellipsis-v"/></div>
+            <div className="same-30 radius-50 center pointer mr-1" data-bs-toggle="modal" data-bs-target="#galleryOpt"><i className="uil uil-ellipsis-v"/></div>
             <Modal id="galleryOpt" headerDisabled modalClass="px-5" contentClass="radius-10">
               <p className="text-center text-10 bold text-dark my-0 py-1"> Share </p>
               <p className="text-center text-10 bold text-dark my-0 py-1"> Unfollow </p>
@@ -179,7 +179,7 @@ export function Detail(props) {
         </div>
         {
           props.close &&
-          <div className="absolute t-0 r-0 same-25 white-25 radius-50 center pointer m-1" data-dismiss="modal"><i className="uil uil-times"/></div>
+          <div className="absolute t-0 r-0 same-25 white-25 radius-50 center pointer m-1" data-bs-dismiss="modal"><i className="uil uil-times"/></div>
         }
       </div>
       <Title />

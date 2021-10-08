@@ -259,51 +259,37 @@ function Index(){
       <div className="row">
         <div className="col-12 mb-3">
           <h6 className="border-bottom border-1 pb-2 mt-3 text-primary">Graphic 1</h6>
-          <div className="radius-10 border border-light">
-            <Graphic1 />
-          </div>
+          <Graphic1 />
         </div>
       </div>
       <div className="row">
         <div className="col-md-6 mb-3">
           <h6 className="border-bottom border-1 pb-2 mt-3 text-primary">Graphic 2</h6>
-          <div className="radius-10 border border-light">
-            <Graphic2 />
-          </div>
+          <Graphic2 />
         </div>
         <div className="col-md-6 mb-3">
           <h6 className="border-bottom border-1 pb-2 mt-3 text-primary">Graphic 3</h6>
-          <div className="radius-10 border border-light">
-            <Graphic3 />
-          </div>
+          <Graphic3 />
         </div>
       </div>
       <div className="row">
         <div className="col-md-6 mb-3">
           <h6 className="border-bottom border-1 pb-2 mt-3 text-primary">Graphic 4</h6>
-          <div className="radius-10 border border-light">
-            <Graphic4 />
-          </div>
+          <Graphic4 />
         </div>
         <div className="col-md-6 mb-3">
           <h6 className="border-bottom border-1 pb-2 mt-3 text-primary">Graphic 5</h6>
-          <div className="radius-10 border border-light">
-            <Graphic5 />
-          </div>
+          <Graphic5 />
         </div>
       </div>
       <div className="row">
         <div className="col-md-6 mb-3">
           <h6 className="border-bottom border-1 pb-2 mt-3 text-primary">Graphic 6</h6>
-          <div className="radius-10 border border-light">
-            <Graphic6 />
-          </div>
+          <Graphic6 />
         </div>
         <div className="col-md-6 mb-3">
           <h6 className="border-bottom border-1 pb-2 mt-3 text-primary">Graphic 7</h6>
-          <div className="radius-10 border border-light">
-            <Graphic7 />
-          </div>
+          <Graphic7 />
         </div>
       </div>
     </div>

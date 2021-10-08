@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import moment from 'moment'
-import MomentUtils from '@date-io/moment';
+import utils from '@date-io/moment';
 import { TimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers'
 
 function Index(props){
@@ -11,7 +11,7 @@ function Index(props){
     props.onChange(e, props.name || false)
   }
   return (
-    <MuiPickersUtilsProvider utils={MomentUtils}>
+    <MuiPickersUtilsProvider utils={utils}>
       <div className="" onClick={() => isOpenSet(true)}>
         {
           props.children ||

@@ -24,7 +24,9 @@ function Index(props){
   }, [props])
   window.addEventListener('mouseover', expired)
   window.addEventListener('focus', expired)
-  useEffect(() => import('feather-icons').then(f => f.replace()), [])
+  useEffect(() => {
+    import('feather-icons').then(f => f.replace())
+  }, [])
   useEffect(() => {
     const vendorRoutes = (props.location.pathname).split('/')[1] === 'vendor'
     vendorPagesSet(vendorRoutes)

@@ -19,8 +19,8 @@ function List(props){
             </Link>
             <Link className="col text-right text-7 text-dark pr-0" to={`${props.link || '#'}`} >{props.right}</Link>
             <div className="col-auto px-0">
-              <div data-toggle="tooltip" data-placement="top" title="Folder">
-                <span className="btn text-dark text-9 radius-20 pointer same-25 p-0 center dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <i className="uil uil-angle-right"></i> </span>
+              <div data-bs-toggle="tooltip" data-bs-placement="top" title="Folder">
+                <span className="btn text-dark text-9 radius-20 pointer same-25 p-0 center dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> <i className="uil uil-angle-right"></i> </span>
                 <div className="dropdown-menu l-unset r-0">
                   <span className="dropdown-header">Move to</span>
                   <a className="dropdown-item text-9" href="##">View</a>

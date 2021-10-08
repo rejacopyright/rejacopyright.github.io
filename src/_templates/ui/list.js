@@ -12,7 +12,7 @@ function List1(){
         <h6 className="text-8 text-muted m-0 truncate">Lorem ipsum dolor sit amet.</h6>
       </div>
       <div className="dropdown ml-auto">
-        <Link to="#" className="dropdown-toggle arrow-none text-muted" data-toggle="dropdown" aria-expanded="false">
+        <Link to="#" className="dropdown-toggle arrow-none text-muted" data-bs-toggle="dropdown" aria-expanded="false">
           <i className="uil uil-ellipsis-v"></i>
         </Link>
         <div className="dropdown-menu dropdown-menu-right radius-5 oh shadow-img z-1">
@@ -40,7 +40,7 @@ function List2(){
         </label>
       </div>
       <div className="dropdown ml-auto">
-        <Link to="#" className="dropdown-toggle arrow-none text-muted" data-toggle="dropdown" aria-expanded="false">
+        <Link to="#" className="dropdown-toggle arrow-none text-muted" data-bs-toggle="dropdown" aria-expanded="false">
           <i className="uil uil-ellipsis-v"></i>
         </Link>
         <div className="dropdown-menu dropdown-menu-right radius-5 oh shadow-img z-1">

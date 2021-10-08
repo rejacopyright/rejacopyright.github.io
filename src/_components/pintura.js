@@ -34,6 +34,7 @@ async function Editor(props){
     cropEnableButtonToggleCropLimit: false,
     cropEnableZoomTowardsWheelPosition: false,
     cropEnableZoomInput: true,
+    imageCropAspectRatio: 1,
     locale: locale,
     imageCropLimitToImage: true,
     previewUpscale: true,
@@ -43,7 +44,7 @@ async function Editor(props){
     imageWriter: pin.createDefaultImageWriter({
       // quality: 0.1,
       mimeType: 'image/jpeg',
-      renameFile: file => 'oke.jpg',
+      // renameFile: file => 'oke.jpg',
       targetSize: {
         height: 500,
         fit: 'contain',

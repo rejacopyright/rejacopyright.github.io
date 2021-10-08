@@ -20,9 +20,9 @@ function Index(){
   return (
     <Fragment>
       <div className="btn-group mb-2">
-        <button type="button" className="btn btn-sm text-dark" data-toggle="tooltip" data-placement="top" title="Mark as spam"><i className="uil uil-exclamation-octagon"></i></button>
-        <button type="button" className="btn btn-sm text-dark" data-toggle="tooltip" data-placement="top" title="Delete"><i className="uil uil-trash-alt"></i></button>
-        <button type="button" className="btn btn-sm text-dark dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <i className="uil uil-folder"></i> <i className="uil uil-angle-down"></i> </button>
+        <button type="button" className="btn btn-sm text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as spam"><i className="uil uil-exclamation-octagon"></i></button>
+        <button type="button" className="btn btn-sm text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i className="uil uil-trash-alt"></i></button>
+        <button type="button" className="btn btn-sm text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> <i className="uil uil-folder"></i> <i className="uil uil-angle-down"></i> </button>
         <div className="dropdown-menu">
           <span className="dropdown-header">Move to</span>
           <a className="dropdown-item" href="##">Social</a>

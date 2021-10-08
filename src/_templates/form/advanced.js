@@ -28,7 +28,7 @@ function Debounced(){
 function Tags(props){
   const [tagVal, tagValSet] = useState([])
   const [tag, tagSet] = useState([])
-  const reg = /[\s,|/~!@#$%^*()_+<>?;:'".]+/
+  const reg = /[\s,|/~!@#$%^*()_+=<>?;:'".-]+/
   function onChange(e){
     const val = e.target.value
     const arr = val.split(reg).filter(Boolean)

@@ -17,7 +17,7 @@ function Index(props){
   }
   return (
     <Fragment>
-      <div className={!props.children ? `same-30 radius-50 center pointer text-9 ${props.btnClass}` : ''} data-toggle="modal" data-target={`#${props.id || 'selection'}`}> {props.children || <i className={`uil ${props.icon || 'uil-calendar-alt'}`} />}</div>
+      <div className={!props.children ? `same-30 radius-50 center pointer text-9 ${props.btnClass}` : ''} data-bs-toggle="modal" data-bs-target={`#${props.id || 'selection'}`}> {props.children || <i className={`uil ${props.icon || 'uil-calendar-alt'}`} />}</div>
       <div className="modal fade" id={`${props.id || 'selection'}`} role="dialog" aria-hidden="true">
         <div className={`modal-dialog modal-dialog-centered center ${props.modalClass}`}>
           <div className="modal-content w-auto p-2">
@@ -28,8 +28,8 @@ function Index(props){
               />
             <div className="row">
               <div className="col text-right">
-                <span className="btn pointer btn-sm text-muted width-md" data-dismiss="modal">Tutup</span>
-                <span className="btn pointer btn-sm btn-soft-primary width-md" data-dismiss="modal" onClick={() => props.onChange(state)}>Okey</span>
+                <span className="btn pointer btn-sm text-muted width-md" data-bs-dismiss="modal">Tutup</span>
+                <span className="btn pointer btn-sm btn-soft-primary width-md" data-bs-dismiss="modal" onClick={() => props.onChange(state)}>Okey</span>
               </div>
             </div>
           </div>

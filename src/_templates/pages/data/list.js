@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 const Menu = () => (
   <Fragment>
     <div className="btn-group mt-2" style={{marginLeft: '-.6rem'}}>
-      <button type="button" className="btn btn-sm text-dark" data-toggle="tooltip" data-placement="top" title="Mark as spam"><i className="uil uil-exclamation-octagon"></i></button>
-      <button type="button" className="btn btn-sm text-dark" data-toggle="tooltip" data-placement="top" title="Delete"><i className="uil uil-trash-alt"></i></button>
-      <button type="button" className="btn btn-sm text-dark dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <i className="uil uil-folder"></i> <i className="uil uil-angle-down"></i> </button>
+      <button type="button" className="btn btn-sm text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Mark as spam"><i className="uil uil-exclamation-octagon"></i></button>
+      <button type="button" className="btn btn-sm text-dark" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete"><i className="uil uil-trash-alt"></i></button>
+      <button type="button" className="btn btn-sm text-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> <i className="uil uil-folder"></i> <i className="uil uil-angle-down"></i> </button>
       <div className="dropdown-menu">
         <span className="dropdown-header">Type</span>
         <span className="dropdown-item text-9 pointer"><i className="uil uil-plus-circle mr-1" />Increment</span>
@@ -58,7 +58,7 @@ function Index(){
                         <span className="badge badge-soft-success right-bar-toggle" onClick={(e) => simpleView(e, key)}>Simple View</span>
                       </div>
                       <div className="col-auto pr-0">
-                        <div data-toggle="tooltip" data-placement="top" title="Folder">
+                        <div data-bs-toggle="tooltip" data-bs-placement="top" title="Folder">
                           <span className="btn btn-xs text-dark radius-20 pointer same-25 p-0 center dropdown-toggle"> <i className="uil uil-angle-right"></i> </span>
                         </div>
                       </div>

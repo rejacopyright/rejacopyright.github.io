@@ -129,7 +129,7 @@ const Index = forwardRef((props, ref) => {
           <div className="pro-user-desc text-primary text-8 text-truncate f-500">Administrator</div>
         </div>
         <div className="dropdown align-self-center">
-          <Link className="dropdown-toggle m-0" data-toggle="dropdown" to="#"> <span data-feather="chevron-down" className="text-dark lh-0 bg-light border border-light shadow-xs same-20 center radius-50" /> </Link>
+          <Link className="dropdown-toggle m-0" data-bs-toggle="dropdown" to="#"> <span data-feather="chevron-down" className="text-dark lh-0 bg-light border border-light shadow-xs same-20 center radius-50" /> </Link>
           <div className="dropdown-menu profile-dropdown-items shadow-md py-2">
             <Link to="/" className="dropdown-item"> <i data-feather="user" className="icon-dual icon-xs mr-2"></i> <span>Beralih ke User</span> </Link>
             <div className="dropdown-divider"></div>
